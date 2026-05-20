@@ -4,243 +4,156 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 interface Zone {
-  id: string;
   label: string;
-  countries: string;
-  rate: string;
-  desc: string;
-}
-
-interface Credit {
-  amount: string;
-  minutes: string;
-  popular?: boolean;
+  price: string;
+  color: string;
+  countries: Array<{ name: string; dial: string }>;
 }
 
 export default function Pricing() {
   const t = useTranslations('pricing');
-  const zones   = t.raw('zones')   as Zone[];
-  const credits = t.raw('credits') as Credit[];
+  const zones = t.raw('zones') as Zone[];
   const [activeZone, setActiveZone] = useState(0);
+  const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section
-      id="pricing"
-      className="py-24 relative overflow-hidden"
-      style={{ background: '#080b12' }}
-    >
-      {/* Background accents */}
-      <div
-        className="absolute bottom-0 right-0 pointer-events-none"
-        style={{
-          width: '500px',
-          height: '500px',
-          background: 'radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 65%)',
-        }}
-      />
+    <section id="pricing" style={{ padding: '90px 0', background: '#050810', position: 'relative' }}>
+      {/* subtle glow */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 60% 30% at 50% 0%, rgba(0,212,255,0.04) 0%, transparent 70%)' }} />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px', position: 'relative' }}>
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-4">
-            <span className="section-label" style={{ color: '#F59E0B', borderColor: 'rgba(245,158,11,0.3)', background: 'rgba(245,158,11,0.1)' }}>
-              Preise
-            </span>
-          </div>
-          <h2
-            className="font-display font-bold text-white mb-4"
-            style={{
-              fontFamily: 'var(--font-syne, Syne, sans-serif)',
-              fontSize: 'clamp(28px, 4vw, 48px)',
-            }}
-          >
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <h2 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 'clamp(28px, 4vw, 44px)', letterSpacing: '-0.03em', color: '#fff', marginBottom: '12px' }}>
             {t('title')}
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: '#64748B' }}>
+          <p style={{ color: '#94A3B8', fontSize: '1.05rem', maxWidth: '560px', margin: '0 auto' }}>
             {t('subtitle')}
           </p>
+        </div>
 
-          {/* No sub / no contract badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
-            {[t('noSub'), t('noContract'), t('creditNeverExpires')].map((label) => (
-              <span
-                key={label}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold"
-                style={{ background: 'rgba(34,197,94,0.1)', color: '#22C55E', border: '1px solid rgba(34,197,94,0.2)' }}
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                {label}
-              </span>
-            ))}
+        {/* No-hidden-costs banner */}
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(0,212,255,0.08), rgba(91,33,182,0.08))',
+          border: '1px solid rgba(0,212,255,0.25)',
+          borderRadius: '16px', padding: '20px 24px', marginBottom: '40px',
+          display: 'flex', alignItems: 'flex-start', gap: '16px',
+        }}>
+          <div style={{ fontSize: '1.8rem', flexShrink: 0 }}>✅</div>
+          <div>
+            <strong style={{ color: '#00D4FF', fontSize: '1rem', display: 'block', marginBottom: '6px' }}>
+              {t('noHidden')}
+            </strong>
+            <span style={{ color: '#94A3B8', fontSize: '0.88rem', lineHeight: 1.6 }}>
+              {t('noHiddenDesc')}
+            </span>
           </div>
         </div>
 
-        {/* Zone Selector */}
-        <div className="mb-12">
-          <h3
-            className="text-center font-display font-bold text-white mb-6"
-            style={{ fontFamily: 'var(--font-syne, Syne)', fontSize: '1.1rem' }}
-          >
-            {t('zonesTitle')}
-          </h3>
-
-          {/* Zone tabs */}
-          <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-            {zones.map((zone, i) => (
-              <button
-                key={zone.id}
-                onClick={() => setActiveZone(i)}
-                className="px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200"
-                style={{
-                  fontFamily: 'var(--font-syne, Syne)',
-                  background: activeZone === i ? '#F59E0B' : 'rgba(255,255,255,0.05)',
-                  color: activeZone === i ? '#000' : '#94A3B8',
-                  border: activeZone === i ? 'none' : '1px solid rgba(255,255,255,0.08)',
-                  boxShadow: activeZone === i ? '0 0 20px rgba(245,158,11,0.3)' : '',
-                }}
-              >
-                {zone.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Active zone details */}
-          {zones[activeZone] && (
-            <div
-              className="max-w-2xl mx-auto rounded-2xl p-8 text-center"
-              style={{
-                background: 'rgba(245,158,11,0.06)',
-                border: '1px solid rgba(245,158,11,0.2)',
-              }}
-            >
-              <div
-                className="font-display font-extrabold mb-2"
-                style={{
-                  fontFamily: 'var(--font-syne, Syne)',
-                  fontSize: 'clamp(36px, 5vw, 56px)',
-                  color: '#F59E0B',
-                  textShadow: '0 0 40px rgba(245,158,11,0.4)',
-                }}
-              >
-                {zones[activeZone].rate}
-              </div>
-              <p className="font-semibold text-white mb-1" style={{ fontFamily: 'var(--font-syne, Syne)' }}>
-                {zones[activeZone].desc}
-              </p>
-              <p className="text-sm" style={{ color: '#64748B' }}>
-                {zones[activeZone].countries}
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Credit packages */}
-        <h3
-          className="text-center font-display font-bold text-white mb-8"
-          style={{ fontFamily: 'var(--font-syne, Syne)', fontSize: '1.1rem' }}
-        >
-          {t('creditsTitle')}
-        </h3>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {credits.map((credit, i) => (
-            <div
+        {/* Zone Tabs */}
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '28px' }}>
+          {zones.map((zone, i) => (
+            <button
               key={i}
-              className="relative rounded-2xl p-6 text-center transition-all duration-300 cursor-pointer group"
+              onClick={() => setActiveZone(i)}
               style={{
-                background: credit.popular ? 'rgba(0,212,255,0.08)' : 'rgba(13,17,23,0.8)',
-                border: credit.popular ? '1px solid rgba(0,212,255,0.3)' : '1px solid rgba(255,255,255,0.07)',
-                boxShadow: credit.popular ? '0 0 30px rgba(0,212,255,0.1)' : '',
-              }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = 'translateY(-3px)';
-                if (!credit.popular) {
-                  el.style.borderColor = 'rgba(0,212,255,0.2)';
-                  el.style.boxShadow = '0 8px 24px rgba(0,0,0,0.3)';
-                }
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = '';
-                if (!credit.popular) {
-                  el.style.borderColor = 'rgba(255,255,255,0.07)';
-                  el.style.boxShadow = '';
-                }
+                padding: '9px 18px', borderRadius: '30px', cursor: 'pointer',
+                fontSize: '0.85rem', fontWeight: 600,
+                border: activeZone === i ? `1px solid ${zone.color}` : '1px solid rgba(255,255,255,0.1)',
+                background: activeZone === i ? `${zone.color}20` : 'rgba(255,255,255,0.04)',
+                color: activeZone === i ? zone.color : '#64748B',
+                boxShadow: activeZone === i ? `0 0 16px ${zone.color}30` : 'none',
+                transition: 'all 0.2s',
               }}
             >
-              {credit.popular && (
-                <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-xs font-bold"
-                  style={{
-                    background: '#00D4FF',
-                    color: '#000',
-                    fontFamily: 'var(--font-syne, Syne)',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  ★ Beliebt
-                </div>
-              )}
-
-              <div
-                className="font-display font-extrabold mb-1"
-                style={{
-                  fontFamily: 'var(--font-syne, Syne)',
-                  fontSize: 'clamp(28px, 3vw, 36px)',
-                  color: credit.popular ? '#00D4FF' : '#FFFFFF',
-                }}
-              >
-                {credit.amount}
-              </div>
-
-              <p className="text-xs leading-relaxed mt-2" style={{ color: '#64748B' }}>
-                {credit.minutes}
-              </p>
-
-              <button
-                className="mt-5 w-full py-2.5 rounded-xl text-sm font-bold transition-all duration-200"
-                style={{
-                  background: credit.popular ? '#00D4FF' : 'rgba(255,255,255,0.07)',
-                  color: credit.popular ? '#000' : '#94A3B8',
-                  fontFamily: 'var(--font-syne, Syne)',
-                  border: credit.popular ? 'none' : '1px solid rgba(255,255,255,0.1)',
-                }}
-              >
-                Aufladen
-              </button>
-            </div>
+              {zone.label}
+            </button>
           ))}
         </div>
 
-        {/* Payment methods */}
-        <div className="mt-12 text-center">
-          <p className="text-sm mb-5" style={{ color: '#334155' }}>
-            {t('note')}
-          </p>
-          <div className="flex items-center justify-center gap-3 flex-wrap">
-            {[
-              { label: 'Apple Pay', icon: '🍎' },
-              { label: 'Google Pay', icon: 'G' },
-              { label: 'Kreditkarte', icon: '💳' },
-              { label: 'Stripe', icon: 'S' },
-            ].map(({ label, icon }) => (
-              <div
-                key={label}
-                className="px-4 py-2 rounded-lg flex items-center gap-2 text-xs font-semibold"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  color: '#64748B',
-                }}
-              >
-                <span>{icon}</span>
-                {label}
+        {/* Active Zone Card */}
+        {zones[activeZone] && (
+          <div style={{
+            background: 'rgba(255,255,255,0.03)',
+            border: `1px solid ${zones[activeZone].color}30`,
+            borderRadius: '20px', overflow: 'hidden',
+            boxShadow: `0 0 40px ${zones[activeZone].color}10`,
+          }}>
+            {/* Zone header */}
+            <div style={{
+              background: `linear-gradient(135deg, ${zones[activeZone].color}15, transparent)`,
+              padding: '24px 28px',
+              borderBottom: '1px solid rgba(255,255,255,0.06)',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px',
+            }}>
+              <div>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: '1.3rem', color: '#fff', marginBottom: '4px' }}>
+                  {zones[activeZone].label}
+                </h3>
+                <p style={{ color: '#64748B', fontSize: '0.85rem' }}>
+                  {zones[activeZone].countries.length} Länder
+                </p>
               </div>
-            ))}
+              <div style={{
+                background: `${zones[activeZone].color}20`,
+                border: `2px solid ${zones[activeZone].color}`,
+                borderRadius: '14px', padding: '12px 24px', textAlign: 'center',
+              }}>
+                <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: '1.8rem', color: zones[activeZone].color, lineHeight: 1 }}>
+                  {zones[activeZone].price}
+                </div>
+                <div style={{ color: '#64748B', fontSize: '0.72rem', marginTop: '4px' }}>inkl. KI-Übersetzung</div>
+              </div>
+            </div>
+
+            {/* Countries grid */}
+            <div style={{ padding: '20px 28px' }}>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+                gap: '8px',
+              }}>
+                {zones[activeZone].countries.map((c, j) => (
+                  <div key={j} style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    padding: '10px 14px', borderRadius: '10px',
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.06)',
+                  }}>
+                    <span style={{ color: '#E2E8F0', fontSize: '0.88rem', fontWeight: 500 }}>{c.name}</span>
+                    <span style={{ color: '#475569', fontSize: '0.78rem', fontFamily: 'monospace' }}>{c.dial}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+        )}
+
+        {/* All zones overview */}
+        <div style={{ marginTop: '32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '12px' }}>
+          {zones.map((zone, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveZone(i)}
+              style={{
+                padding: '16px', borderRadius: '14px', cursor: 'pointer', textAlign: 'left',
+                border: `1px solid ${zone.color}${activeZone === i ? '60' : '25'}`,
+                background: activeZone === i ? `${zone.color}12` : 'rgba(255,255,255,0.02)',
+                transition: 'all 0.2s',
+              }}
+            >
+              <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: '1.1rem', color: zone.color }}>{zone.price}</div>
+              <div style={{ color: '#fff', fontWeight: 600, fontSize: '0.85rem', marginTop: '4px' }}>{zone.label}</div>
+              <div style={{ color: '#475569', fontSize: '0.75rem', marginTop: '2px' }}>{zone.countries.length} Länder</div>
+            </button>
+          ))}
         </div>
+
+        {/* Note */}
+        <p style={{ textAlign: 'center', color: '#475569', fontSize: '0.8rem', marginTop: '28px', lineHeight: 1.6 }}>
+          {t('note')}
+        </p>
       </div>
     </section>
   );

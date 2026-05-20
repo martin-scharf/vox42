@@ -69,83 +69,330 @@
     ]
   },
   "pricing": {
-    "title": "Простая система предоплаты",
-    "subtitle": "Никаких подписок, никаких сюрпризов. Пополните баланс и вперёд.",
-    "packages": [
-      {
-        "amount": "5€",
-        "label": "Стартер",
-        "desc": "Идеально для пробы. Около 30 минут переведённых разговоров."
-      },
-      {
-        "amount": "15€",
-        "label": "Стандарт",
-        "desc": "Наш самый популярный пакет. Около 100 минут для повседневного использования.",
-        "popular": true
-      },
-      {
-        "amount": "50€",
-        "label": "Максимум",
-        "desc": "Для активных пользователей и деловых путешественников. Более 330 минут."
-      }
-    ],
-    "note": "Баланс не сгорает. Принимаются Apple Pay, кредитная карта и Stripe.",
-    "zonesTitle": "Прозрачные тарифы по зонам",
-    "fromLabel": "от",
-    "noSub": "Без подписки",
-    "noContract": "Без контракта",
-    "creditsTitle": "Пакеты пополнения",
-    "creditNeverExpires": "Баланс не сгорает",
+    "title": "Цены за минуту",
+    "subtitle": "Никаких скрытых платежей. Никаких операторских сборов. Всё включено.",
+    "note": "Все цены за начатую минуту · Перевод ИИ в реальном времени включён · Бесплатный тест-звонок (90 сек) для новых пользователей",
+    "noHidden": "Без операторских сборов",
+    "noHiddenDesc": "С Vox42 вы звоните через нашу собственную инфраструктуру — без дополнительных сборов мобильной сети. Вы платите только тариф Vox42 за минуту, остальное включено.",
     "zones": [
       {
-        "label": "Зона A",
-        "countries": "DE, AT, CH, LU, LI",
-        "rate": "0,08 €/мин",
-        "color": "#00D4FF"
+        "label": "DACH & USA",
+        "price": "1,19 €/Min",
+        "color": "#00D4FF",
+        "countries": [
+          {
+            "name": "Deutschland",
+            "dial": "+49"
+          },
+          {
+            "name": "Österreich",
+            "dial": "+43"
+          },
+          {
+            "name": "Schweiz",
+            "dial": "+41"
+          },
+          {
+            "name": "USA",
+            "dial": "+1"
+          }
+        ]
       },
       {
-        "label": "Зона B",
-        "countries": "Страны ЕС",
-        "rate": "0,12 €/мин",
-        "color": "#4ADE80"
+        "label": "Europa",
+        "price": "1,39 €/Min",
+        "color": "#4ADE80",
+        "countries": [
+          {
+            "name": "Belgien",
+            "dial": "+32"
+          },
+          {
+            "name": "Bulgarien",
+            "dial": "+359"
+          },
+          {
+            "name": "Dänemark",
+            "dial": "+45"
+          },
+          {
+            "name": "Estland",
+            "dial": "+372"
+          },
+          {
+            "name": "Finnland",
+            "dial": "+358"
+          },
+          {
+            "name": "Frankreich",
+            "dial": "+33"
+          },
+          {
+            "name": "Griechenland",
+            "dial": "+30"
+          },
+          {
+            "name": "Großbritannien",
+            "dial": "+44"
+          },
+          {
+            "name": "Irland",
+            "dial": "+353"
+          },
+          {
+            "name": "Italien",
+            "dial": "+39"
+          },
+          {
+            "name": "Kroatien",
+            "dial": "+385"
+          },
+          {
+            "name": "Lettland",
+            "dial": "+371"
+          },
+          {
+            "name": "Litauen",
+            "dial": "+370"
+          },
+          {
+            "name": "Luxemburg",
+            "dial": "+352"
+          },
+          {
+            "name": "Niederlande",
+            "dial": "+31"
+          },
+          {
+            "name": "Norwegen",
+            "dial": "+47"
+          },
+          {
+            "name": "Polen",
+            "dial": "+48"
+          },
+          {
+            "name": "Portugal",
+            "dial": "+351"
+          },
+          {
+            "name": "Rumänien",
+            "dial": "+40"
+          },
+          {
+            "name": "Schweden",
+            "dial": "+46"
+          },
+          {
+            "name": "Serbien",
+            "dial": "+381"
+          },
+          {
+            "name": "Slowakei",
+            "dial": "+421"
+          },
+          {
+            "name": "Slowenien",
+            "dial": "+386"
+          },
+          {
+            "name": "Spanien",
+            "dial": "+34"
+          },
+          {
+            "name": "Tschechien",
+            "dial": "+420"
+          },
+          {
+            "name": "Ukraine",
+            "dial": "+380"
+          },
+          {
+            "name": "Ungarn",
+            "dial": "+36"
+          }
+        ]
       },
       {
-        "label": "Зона C",
-        "countries": "US, CA, AU, JP, KR, SG...",
-        "rate": "0,18 €/мин",
-        "color": "#F59E0B"
+        "label": "Asien & Ozeanien",
+        "price": "1,79 €/Min",
+        "color": "#F59E0B",
+        "countries": [
+          {
+            "name": "Australien",
+            "dial": "+61"
+          },
+          {
+            "name": "Bangladesch",
+            "dial": "+880"
+          },
+          {
+            "name": "Hongkong",
+            "dial": "+852"
+          },
+          {
+            "name": "Indien",
+            "dial": "+91"
+          },
+          {
+            "name": "Indonesien",
+            "dial": "+62"
+          },
+          {
+            "name": "Japan",
+            "dial": "+81"
+          },
+          {
+            "name": "Kenia",
+            "dial": "+254"
+          },
+          {
+            "name": "Malaysia",
+            "dial": "+60"
+          },
+          {
+            "name": "Neuseeland",
+            "dial": "+64"
+          },
+          {
+            "name": "Nigeria",
+            "dial": "+234"
+          },
+          {
+            "name": "Pakistan",
+            "dial": "+92"
+          },
+          {
+            "name": "Philippinen",
+            "dial": "+63"
+          },
+          {
+            "name": "Singapur",
+            "dial": "+65"
+          },
+          {
+            "name": "Südafrika",
+            "dial": "+27"
+          },
+          {
+            "name": "Südkorea",
+            "dial": "+82"
+          },
+          {
+            "name": "Taiwan",
+            "dial": "+886"
+          },
+          {
+            "name": "Thailand",
+            "dial": "+66"
+          },
+          {
+            "name": "Vietnam",
+            "dial": "+84"
+          }
+        ]
       },
       {
-        "label": "Зона D",
-        "countries": "Остальной мир",
-        "rate": "0,28 €/мин",
-        "color": "#F97316"
-      }
-    ],
-    "credits": [
-      {
-        "amount": "€5",
-        "label": "Starter",
-        "desc": "~30 min Zone A",
-        "popular": false
+        "label": "Naher Osten & Nordafrika",
+        "price": "1,99 €/Min",
+        "color": "#F97316",
+        "countries": [
+          {
+            "name": "Ägypten",
+            "dial": "+20"
+          },
+          {
+            "name": "Iran",
+            "dial": "+98"
+          },
+          {
+            "name": "Israel",
+            "dial": "+972"
+          },
+          {
+            "name": "Jordanien",
+            "dial": "+962"
+          },
+          {
+            "name": "Libanon",
+            "dial": "+961"
+          },
+          {
+            "name": "Marokko",
+            "dial": "+212"
+          },
+          {
+            "name": "Saudi-Arabien",
+            "dial": "+966"
+          },
+          {
+            "name": "Tunesien",
+            "dial": "+216"
+          },
+          {
+            "name": "Türkei",
+            "dial": "+90"
+          },
+          {
+            "name": "VAE",
+            "dial": "+971"
+          }
+        ]
       },
       {
-        "amount": "€15",
-        "label": "Standard",
-        "desc": "~100 min Zone A",
-        "popular": true
-      },
-      {
-        "amount": "€30",
-        "label": "Comfort",
-        "desc": "~200 min Zone A",
-        "popular": false
-      },
-      {
-        "amount": "€50",
-        "label": "Power",
-        "desc": "~330 min Zone A",
-        "popular": false
+        "label": "Premium",
+        "price": "2,59 €/Min",
+        "color": "#A855F7",
+        "countries": [
+          {
+            "name": "Argentinien",
+            "dial": "+54"
+          },
+          {
+            "name": "Belarus",
+            "dial": "+375"
+          },
+          {
+            "name": "Brasilien",
+            "dial": "+55"
+          },
+          {
+            "name": "Chile",
+            "dial": "+56"
+          },
+          {
+            "name": "China",
+            "dial": "+86"
+          },
+          {
+            "name": "Costa Rica",
+            "dial": "+506"
+          },
+          {
+            "name": "Kolumbien",
+            "dial": "+57"
+          },
+          {
+            "name": "Kuba",
+            "dial": "+53"
+          },
+          {
+            "name": "Mexiko",
+            "dial": "+52"
+          },
+          {
+            "name": "Peru",
+            "dial": "+51"
+          },
+          {
+            "name": "Russland",
+            "dial": "+7"
+          },
+          {
+            "name": "Venezuela",
+            "dial": "+58"
+          }
+        ]
       }
     ]
   },
