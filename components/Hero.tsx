@@ -60,7 +60,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20 lg:py-28">
         {/* Text — Left */}
-        <div className="text-center lg:text-left">
+        <div className="text-center lg:text-left min-w-0">
           {/* Badges */}
           <div
             className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8 animate-fade-up"
@@ -87,7 +87,7 @@ export default function Hero() {
             className="font-display font-extrabold leading-[1.05] tracking-tight text-white mb-6 animate-fade-up"
             style={{
               fontFamily: 'var(--font-syne, Syne, sans-serif)',
-              fontSize: 'clamp(52px, 7vw, 96px)',
+              fontSize: 'clamp(40px, 5.5vw, 72px)',
               animationDelay: '0.1s',
             }}
           >
