@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import WorldMapD3 from './WorldMapD3';
 
@@ -195,12 +195,56 @@ function getZone(cc: string) {
 
 export default function LanguageConfigurator() {
   const t = useTranslations('configurator');
-  const [activeLangs, setActiveLangs] = useState<Set<string>>(
-    new Set(LANGUAGES.map(l => l.code))
-  );
+  const [activeLangs, setActiveLangs] = useState<Set<string>>(new Set<string>());
   const [clickedInfo, setClickedInfo] = useState<string | null>(null);
+  const [userInteracted, setUserInteracted] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const allCodes = LANGUAGES.map(l => l.code);
+
+  // Auto-animation: random language selection until user clicks
+  const runAnimation = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+
+    const steps: Array<() => void> = [];
+    const delay = (ms: number, fn: () => void) => steps.push(() => { timerRef.current = setTimeout(() => { fn(); runNext(); }, ms); });
+    let stepIdx = 0;
+    const runNext = () => { if (stepIdx < steps.length) steps[stepIdx++](); };
+
+    // Build a random sequence
+    const shuffled = [...allCodes].sort(() => Math.random() - 0.5);
+    const pick1 = shuffled[0];
+    const pick2 = shuffled[1];
+    const pick3 = shuffled[2];
+    const pick4 = shuffled[3];
+
+    delay(0,    () => setActiveLangs(new Set([pick1])));
+    delay(700,  () => setActiveLangs(new Set([pick1, pick2])));
+    delay(800,  () => setActiveLangs(new Set([pick1, pick2, pick3])));
+    delay(900,  () => setActiveLangs(new Set<string>()));
+    delay(500,  () => setActiveLangs(new Set([pick4])));
+    delay(700,  () => setActiveLangs(new Set([pick4, pick3])));
+    delay(1200, () => setActiveLangs(new Set<string>()));
+    delay(400,  () => runAnimation()); // loop
+
+    runNext();
+  }, []); // eslint-disable-line
+
+  useEffect(() => {
+    if (!userInteracted) {
+      timerRef.current = setTimeout(runAnimation, 600);
+    }
+    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
+  }, [userInteracted, runAnimation]);
 
   const toggleLang = (code: string) => {
+    // Stop animation on first user click
+    if (!userInteracted) {
+      setUserInteracted(true);
+      if (timerRef.current) clearTimeout(timerRef.current);
+      // Start fresh: all active
+      setActiveLangs(new Set(allCodes));
+      return;
+    }
     setActiveLangs(prev => {
       if (prev.size === 1 && prev.has(code)) return prev;
       const next = new Set(prev);
