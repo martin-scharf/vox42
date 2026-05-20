@@ -18,7 +18,7 @@ export default function Footer() {
   ] as const;
 
   return (
-    <footer className="bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800 py-12">
+    <footer className="py-12" style={{ background: '#050810', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
@@ -29,16 +29,19 @@ export default function Footer() {
               <path d="M10 6 Q8 8 10 10" stroke="#F97316" strokeWidth="2" strokeLinecap="round" fill="none"/>
               <path d="M22 6 Q24 8 22 10" stroke="#F97316" strokeWidth="2" strokeLinecap="round" fill="none"/>
             </svg>
-            <span className="font-bold text-lg text-primary">Vox42</span>
+            <span className="font-bold text-lg" style={{ color: '#00D4FF' }}>Vox42</span>
           </div>
 
           {/* Links */}
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm" style={{ color: '#64748B' }}>
             {links.map(({ key, href }) => (
               <Link
                 key={key}
                 href={href}
-                className="hover:text-primary dark:hover:text-primary transition-colors"
+                className="transition-colors"
+                style={{ color: '#64748B' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#00D4FF')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#64748B')}
               >
                 {t(key as keyof ReturnType<typeof t>)}
               </Link>
@@ -52,7 +55,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-900 text-center text-xs text-gray-400 dark:text-gray-600">
+        <div className="mt-8 pt-6 text-center text-xs" style={{ borderTop: '1px solid rgba(255,255,255,0.04)', color: '#334155' }}>
           {t('copyright')}
         </div>
       </div>

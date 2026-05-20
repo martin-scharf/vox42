@@ -7,10 +7,10 @@ export default function FAQ() {
   const items = t.raw('items') as Array<{ q: string; a: string }>;
 
   return (
-    <section id="faq" className="py-24 bg-bgLight dark:bg-bgDark">
+    <section id="faq" className="py-24" style={{ background: '#050810' }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-textLight dark:text-textDark mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
             {t('title')}
           </h2>
         </div>
@@ -18,15 +18,25 @@ export default function FAQ() {
           {items.map((item, i) => (
             <details
               key={i}
-              className="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden"
+              className="group overflow-hidden"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: '14px',
+              }}
             >
-              <summary className="flex items-center justify-between px-6 py-4 cursor-pointer list-none font-medium text-textLight dark:text-textDark hover:text-primary dark:hover:text-primary transition-colors min-h-[44px]">
+              <summary
+                className="flex items-center justify-between px-6 py-4 cursor-pointer list-none min-h-[44px] transition-colors"
+                style={{ color: '#E2E8F0', fontWeight: 600, fontSize: '1rem' }}
+                onMouseEnter={e => (e.currentTarget.parentElement!.style.background = 'rgba(0,212,255,0.05)')}
+                onMouseLeave={e => (e.currentTarget.parentElement!.style.background = 'rgba(255,255,255,0.04)')}
+              >
                 <span>{item.q}</span>
                 <svg
-                  className="w-5 h-5 shrink-0 ml-4 text-gray-400 group-open:rotate-180 transition-transform"
+                  className="w-5 h-5 shrink-0 ml-4 group-open:rotate-180 transition-transform"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
+                  stroke="#00D4FF"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -34,7 +44,14 @@ export default function FAQ() {
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </summary>
-              <div className="px-6 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">
+              <div
+                className="px-6 pb-5 leading-relaxed pt-4"
+                style={{
+                  color: '#94A3B8',
+                  fontSize: '0.95rem',
+                  borderTop: '1px solid rgba(255,255,255,0.06)',
+                }}
+              >
                 {item.a}
               </div>
             </details>

@@ -58,9 +58,9 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20 lg:py-28">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-[55fr_45fr] gap-12 lg:gap-16 items-center py-20 lg:py-28">
         {/* Text — Left */}
-        <div className="text-center lg:text-left min-w-0">
+        <div className="text-center lg:text-left min-w-0 overflow-hidden">
           {/* Badges */}
           <div
             className="flex flex-wrap gap-2 justify-center lg:justify-start mb-8 animate-fade-up"
@@ -87,7 +87,7 @@ export default function Hero() {
             className="font-display font-extrabold leading-[1.05] tracking-tight text-white mb-6 animate-fade-up"
             style={{
               fontFamily: 'var(--font-syne, Syne, sans-serif)',
-              fontSize: 'clamp(40px, 5.5vw, 72px)',
+              fontSize: 'clamp(36px, 4.5vw, 62px)',
               animationDelay: '0.1s',
             }}
           >
@@ -148,7 +148,7 @@ export default function Hero() {
         </div>
 
         {/* iPhone Mockup — Right */}
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-end">
           <div className="relative" style={{ animation: 'float 3s ease-in-out infinite' }}>
             {/* Glow behind iPhone */}
             <div
@@ -159,8 +159,8 @@ export default function Hero() {
             {/* iPhone Frame */}
             <div
               style={{
-                width: '280px',
-                height: '580px',
+                width: '260px',
+                height: '520px',
                 background: '#1a1a1a',
                 borderRadius: '44px',
                 border: '10px solid #2a2a2a',
