@@ -313,9 +313,9 @@ export default function LanguageConfigurator() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#00D4FF', boxShadow: '0 0 8px #00D4FF', flexShrink: 0 }} />
               <div>
-                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#fff' }}>Wenn du hier wohnst…</h3>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#fff' }}>{t('homeMap')}</h3>
                 <p style={{ fontSize: '0.7rem', color: '#64748B', marginTop: '1px' }}>
-                  {userInteracted ? 'Sprache klicken zum Deaktivieren' : 'Karte zeigt deine Heimatländer'}
+                  {userInteracted ? t('homeMapSubInteract') : t('homeMapSub')}
                 </p>
               </div>
             </div>
@@ -328,8 +328,8 @@ export default function LanguageConfigurator() {
               pointerEvents: 'none',
             }}>
               <div>
-                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#F59E0B', textAlign: 'right' }}>…kannst du überall hier anrufen</h3>
-                <p style={{ fontSize: '0.7rem', color: '#92400E', marginTop: '1px', textAlign: 'right' }}>130+ Länder · Hover für Sprache & Preis</p>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#F59E0B', textAlign: 'right' }}>{t('targetMap')}</h3>
+                <p style={{ fontSize: '0.7rem', color: '#92400E', marginTop: '1px', textAlign: 'right' }}>{t('targetMapSub')}</p>
               </div>
               <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F59E0B', boxShadow: '0 0 8px #F59E0B', flexShrink: 0 }} />
             </div>
@@ -365,7 +365,7 @@ export default function LanguageConfigurator() {
           </div>
 
           <p style={{ textAlign: 'center', color: '#334155', fontSize: '0.67rem', marginTop: '6px' }}>
-            {showOverlay ? '🌍 Amber = alle Länder die du anrufen kannst · Hover für Details' : 'Hover = Landesname + Sprache · Klicken für Details'}
+            {showOverlay ? t('overlayHint') : t('hoverHint')}
           </p>
         </div>
 
@@ -373,13 +373,13 @@ export default function LanguageConfigurator() {
         <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '16px 20px', marginTop: '14px', display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <div style={{ fontSize: '1.5rem' }}>📞</div>
           <div>
-            <strong style={{ color: '#fff', fontSize: '0.9rem', display: 'block' }}>Globale Reichweite mit Vox42</strong>
+            <strong style={{ color: '#fff', fontSize: '0.9rem', display: 'block' }}>{t('reachTitle')}</strong>
             <span style={{ color: '#94A3B8', fontSize: '0.74rem' }}>
-              {activeLangs.size} Sprache{activeLangs.size !== 1 ? 'n' : ''} aktiv — in 13 Zielsprachen übersetzen, über 5 Milliarden Menschen in 130+ Ländern erreichbar.
+              {t('reachDesc', { active: activeLangs.size })}
             </span>
           </div>
           <div style={{ marginLeft: 'auto', background: 'linear-gradient(135deg, rgba(0,212,255,0.15), rgba(91,33,182,0.15))', border: '1px solid rgba(0,212,255,0.3)', borderRadius: '30px', padding: '7px 18px', fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: '0.98rem', color: '#00D4FF', whiteSpace: 'nowrap' }}>
-            5+ Mrd. Menschen
+            {t('reachPill')}
           </div>
         </div>
       </div>

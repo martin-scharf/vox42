@@ -227,6 +227,19 @@
     "subtitle": "Choisissez votre langue et découvrez où vous pouvez traduire",
     "speaksLabel": "Je parle",
     "selectTarget": "Choisir la langue cible",
-    "translatesTo": "Traduit vers"
+    "translatesTo": "Traduit vers",
+    "homeMap": "Si tu habites ici…",
+    "homeMapSub": "La carte montre tes pays d'origine",
+    "homeMapSubInteract": "Clique sur une langue pour la désactiver",
+    "targetMap": "…tu peux appeler partout ici",
+    "targetMapSub": "130+ pays · Survolez pour langue & prix",
+    "overlayHint": "🌍 Amber = tous les pays que tu peux appeler · Survolez pour détails",
+    "hoverHint": "Survolez = nom du pays + langue · Cliquez pour détails",
+    "statusLine": "{active} / {total} langues actives · {countries} pays d'origine",
+    "reachTitle": "Votre portée mondiale avec Vox42",
+    "reachDesc": "{active} langue(s) active(s) — traduire vers 13 langues cibles, atteindre plus de 5 milliards de personnes dans 130+ pays.",
+    "reachPill": "5+ Mrd. personnes",
+    "withVox42": "avec Vox42 tu peux traduire en direct",
+    "vox42Label": "Vox42"
   }
 }

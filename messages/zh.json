@@ -227,6 +227,19 @@
     "subtitle": "选择您的语言，了解可以翻译到哪些地方",
     "speaksLabel": "我说",
     "selectTarget": "选择目标语言",
-    "translatesTo": "翻译至"
+    "translatesTo": "翻译至",
+    "homeMap": "如果你住在这里…",
+    "homeMapSub": "地图显示您的母国",
+    "homeMapSubInteract": "点击语言以停用",
+    "targetMap": "…你可以拨打这里的任何地方",
+    "targetMapSub": "130+个国家 · 悬停查看语言和价格",
+    "overlayHint": "🌍 琥珀 = 所有你可以拨打的国家 · 悬停查看详情",
+    "hoverHint": "悬停 = 国家名称 + 语言 · 点击查看详情",
+    "statusLine": "{active} / {total} 种语言已激活 · {countries} 个母国",
+    "reachTitle": "您与Vox42的全球覆盖",
+    "reachDesc": "{active} 种语言已激活 — 翻译成13种目标语言，覆盖130+个国家的50亿+人口。",
+    "reachPill": "50亿+人",
+    "withVox42": "使用Vox42您可以实时翻译",
+    "vox42Label": "Vox42"
   }
 }

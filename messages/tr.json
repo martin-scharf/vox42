@@ -227,6 +227,19 @@
     "subtitle": "Dilinizi seçin ve nereye çeviri yapabileceğinizi keşfedin",
     "speaksLabel": "Ben konuşurum",
     "selectTarget": "Hedef dil seçin",
-    "translatesTo": "Şuna çeviri yapar"
+    "translatesTo": "Şuna çeviri yapar",
+    "homeMap": "Burada yaşıyorsan…",
+    "homeMapSub": "Harita ana ülkelerini gösteriyor",
+    "homeMapSubInteract": "Dili devre dışı bırakmak için tıkla",
+    "targetMap": "…buradan her yeri arayabilirsin",
+    "targetMapSub": "130+ ülke · Fiyat & dil için üzerine gel",
+    "overlayHint": "🌍 Sarı = arayabileceğin tüm ülkeler · Detaylar için üzerine gel",
+    "hoverHint": "Üzerine gel = ülke adı + dil · Detaylar için tıkla",
+    "statusLine": "{active} / {total} dil aktif · {countries} ana ülke",
+    "reachTitle": "Vox42 ile küresel erişiminiz",
+    "reachDesc": "{active} dil aktif — 13 hedef dile çevir, 130+ ülkede 5 milyardan fazla insana ulaş.",
+    "reachPill": "5+ Milyar insan",
+    "withVox42": "Vox42 ile canlı çeviri yapabilirsin",
+    "vox42Label": "Vox42"
   }
 }

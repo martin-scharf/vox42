@@ -227,6 +227,19 @@
     "subtitle": "Kies je taal en ontdek waarheen je kunt vertalen",
     "speaksLabel": "Ik spreek",
     "selectTarget": "Kies doeltaal",
-    "translatesTo": "Vertaalt naar"
+    "translatesTo": "Vertaalt naar",
+    "homeMap": "Als jij hier woont…",
+    "homeMapSub": "Kaart toont je thuislanden",
+    "homeMapSubInteract": "Klik taal om te deactiveren",
+    "targetMap": "…kun je overal hier naartoe bellen",
+    "targetMapSub": "130+ landen · Hover voor taal & prijs",
+    "overlayHint": "🌍 Amber = alle landen die je kunt bellen · Hover voor details",
+    "hoverHint": "Hover = landnaam + taal · Klik voor details",
+    "statusLine": "{active} / {total} talen actief · {countries} thuislanden",
+    "reachTitle": "Jouw wereldwijde bereik met Vox42",
+    "reachDesc": "{active} taal/talen actief — vertaal naar 13 doeltalen, bereik meer dan 5 miljard mensen in 130+ landen.",
+    "reachPill": "5+ Mrd. mensen",
+    "withVox42": "met Vox42 kun je live vertalen",
+    "vox42Label": "Vox42"
   }
 }
