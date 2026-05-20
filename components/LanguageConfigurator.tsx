@@ -233,12 +233,14 @@ export default function LanguageConfigurator() {
 
   const toggleLang = (code: string) => {
     if (!userInteracted) {
+      // Erster Klick: Animation stoppen, NUR diese Sprache auswählen, Overlay aus
       setUserInteracted(true);
       setShowOverlay(false);
       if (timerRef.current) clearTimeout(timerRef.current);
-      setActiveLangs(new Set(allCodes));
+      setActiveLangs(new Set([code]));
       return;
     }
+    // Weiteres Klicken: toggle an/aus
     setActiveLangs(prev => {
       if (prev.size === 1 && prev.has(code)) return prev;
       const next = new Set(prev);
@@ -296,6 +298,28 @@ export default function LanguageConfigurator() {
             </button>
           ))}
         </div>
+
+        {/* Toggle-Button für Zielkarte — nur nach Interaktion */}
+        {userInteracted && (
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+            <button
+              onClick={() => setShowOverlay(v => !v)}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                padding: '10px 22px', borderRadius: '30px', cursor: 'pointer',
+                fontSize: '0.85rem', fontWeight: 600,
+                border: showOverlay ? '1px solid #F59E0B' : '1px solid rgba(245,158,11,0.35)',
+                background: showOverlay ? 'rgba(245,158,11,0.15)' : 'rgba(245,158,11,0.06)',
+                color: showOverlay ? '#F59E0B' : '#92400E',
+                boxShadow: showOverlay ? '0 0 20px rgba(245,158,11,0.25)' : 'none',
+                transition: 'all 0.25s',
+              }}
+            >
+              <span style={{ fontSize: '1rem' }}>🌍</span>
+              {showOverlay ? 'Zielkarte ausblenden' : 'Zielkarte anzeigen — wohin kannst du anrufen?'}
+            </button>
+          </div>
+        )}
 
         {/* Clicked info */}
         {clickedInfo && (
