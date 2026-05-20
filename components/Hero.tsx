@@ -2,19 +2,6 @@
 
 import { useTranslations } from 'next-intl';
 
-const TRANSCRIPT_LINES = [
-  { speaker: 'DE', text: 'Guten Morgen, ich brauche einen Termin.' },
-  { speaker: 'EN', text: 'Good morning, I need an appointment.' },
-  { speaker: 'DE', text: 'Wann haben Sie Zeit nächste Woche?' },
-  { speaker: 'EN', text: 'When are you available next week?' },
-  { speaker: 'DE', text: 'Montag um 10 Uhr würde mir passen.' },
-  { speaker: 'EN', text: 'Monday at 10 AM works for me.' },
-  { speaker: 'DE', text: 'Perfekt, dann bis Montag.' },
-  { speaker: 'EN', text: 'Perfect, see you Monday.' },
-  { speaker: 'DE', text: 'Auf Wiederhören!' },
-  { speaker: 'EN', text: 'Goodbye!' },
-];
-
 export default function Hero() {
   const t = useTranslations('hero');
 
@@ -72,7 +59,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-20 lg:py-28">
-        {/* Text */}
+        {/* Text — Left */}
         <div className="text-center lg:text-left">
           {/* Badges */}
           <div
@@ -160,166 +147,303 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Phone Mockup with Live Transcript */}
-        <div className="flex items-center justify-center animate-float">
-          <div className="relative">
-            {/* Glow behind phone */}
+        {/* iPhone Mockup — Right */}
+        <div className="flex items-center justify-center">
+          <div className="relative" style={{ animation: 'float 3s ease-in-out infinite' }}>
+            {/* Glow behind iPhone */}
             <div
               className="absolute inset-0 -z-10 blur-3xl rounded-full"
-              style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 70%)' }}
+              style={{ background: 'radial-gradient(circle, rgba(0,212,255,0.18) 0%, transparent 70%)' }}
             />
 
-            {/* Phone frame */}
+            {/* iPhone Frame */}
             <div
-              className="relative mx-auto rounded-[2.8rem] overflow-hidden"
               style={{
-                width: '240px',
-                height: '480px',
-                background: '#0a0d14',
-                border: '2px solid rgba(0,212,255,0.25)',
-                boxShadow: '0 0 60px rgba(0,212,255,0.12), 0 40px 80px rgba(0,0,0,0.6)',
+                width: '280px',
+                height: '580px',
+                background: '#1a1a1a',
+                borderRadius: '44px',
+                border: '10px solid #2a2a2a',
+                boxShadow: '0 0 0 1px #3a3a3a, 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(0,212,255,0.15)',
+                position: 'relative',
+                overflow: 'hidden',
+                flexShrink: 0,
               }}
             >
-              {/* Notch */}
+              {/* Dynamic Island */}
               <div
-                className="absolute top-3 left-1/2 -translate-x-1/2 rounded-full z-10"
-                style={{ width: '80px', height: '20px', background: '#050810' }}
+                style={{
+                  width: '100px',
+                  height: '26px',
+                  background: '#1a1a1a',
+                  borderRadius: '0 0 20px 20px',
+                  margin: '0 auto',
+                  position: 'relative',
+                  zIndex: 10,
+                }}
               />
 
-              {/* Header bar */}
+              {/* iPhone Screen */}
               <div
-                className="flex items-center justify-between px-5 pt-10 pb-3"
-                style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: '#f2f2f7',
+                  borderRadius: '34px',
+                  overflow: 'hidden',
+                  fontFamily: "-apple-system, 'SF Pro Display', BlinkMacSystemFont, sans-serif",
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
               >
-                <div>
-                  <div className="text-xs font-bold" style={{ color: '#00D4FF', fontFamily: 'var(--font-syne, Syne)' }}>Vox42</div>
-                  <div className="text-xs mt-0.5 flex items-center gap-1" style={{ color: '#64748B' }}>
-                    <span
-                      className="w-1.5 h-1.5 rounded-full inline-block animate-pulse2"
-                      style={{ background: '#22c55e' }}
-                    />
-                    Live
+                {/* Status Bar */}
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '10px 20px 0',
+                    paddingTop: '36px',
+                    fontSize: '11px',
+                    fontWeight: '600',
+                    color: '#000',
+                  }}
+                >
+                  <span>15:16</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    {/* Signal */}
+                    <svg width="17" height="12" viewBox="0 0 17 12" fill="#000">
+                      <rect x="0" y="7" width="3" height="5" rx="0.5"/>
+                      <rect x="4.5" y="4.5" width="3" height="7.5" rx="0.5"/>
+                      <rect x="9" y="2" width="3" height="10" rx="0.5"/>
+                      <rect x="13.5" y="0" width="3" height="12" rx="0.5" opacity="0.3"/>
+                    </svg>
+                    {/* WiFi */}
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="#000">
+                      <path d="M8 9.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+                      <path d="M2.5 5.5C4.1 3.9 5.9 3 8 3s3.9.9 5.5 2.5" stroke="#000" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                      <path d="M0 3C2.7 0.4 5.2 0 8 0s5.3.4 8 3" stroke="#000" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.4"/>
+                    </svg>
+                    {/* Battery */}
+                    <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+                      <rect x="0.5" y="0.5" width="21" height="11" rx="3" stroke="#000" strokeOpacity="0.35"/>
+                      <rect x="22" y="3.5" width="2.5" height="5" rx="1" fill="#000" fillOpacity="0.4"/>
+                      <rect x="2" y="2" width="16" height="8" rx="1.5" fill="#000"/>
+                    </svg>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-xs font-medium" style={{ color: '#94A3B8' }}>🇩🇪 → 🇬🇧</div>
-                  <div className="text-xs mt-0.5" style={{ color: '#64748B' }}>0:42</div>
-                </div>
-              </div>
 
-              {/* Waveform */}
-              <div className="flex items-center justify-center gap-1 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-                {[0.5, 0.8, 1, 0.7, 1, 0.9, 0.6, 1, 0.8, 0.5, 0.9, 1, 0.7, 0.5, 0.8].map((h, i) => (
-                  <div
-                    key={i}
-                    className="rounded-full animate-waveform"
-                    style={{
-                      width: '3px',
-                      height: `${h * 28}px`,
-                      background: '#00D4FF',
-                      opacity: 0.6 + h * 0.4,
-                      transformOrigin: 'center',
-                      animationDelay: `${i * 0.06}s`,
-                    }}
-                  />
-                ))}
-              </div>
+                {/* App Content */}
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '8px 16px 0' }}>
 
-              {/* Transcript scroll area */}
-              <div
-                className="overflow-hidden px-4 py-3"
-                style={{ height: '260px' }}
-              >
-                <div className="animate-transcript">
-                  {[...TRANSCRIPT_LINES, ...TRANSCRIPT_LINES].map((line, i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-2 mb-3"
-                    >
-                      <span
-                        className="text-xs font-bold px-1.5 py-0.5 rounded shrink-0"
+                  {/* Balance + Charge Button */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                    <div>
+                      <div style={{ fontSize: '9px', color: '#8e8e93', fontWeight: '500', marginBottom: '1px' }}>Guthaben</div>
+                      <div style={{ fontSize: '22px', fontWeight: '700', color: '#000', letterSpacing: '-0.5px' }}>59.54 €</div>
+                    </div>
+                    <button style={{
+                      background: '#007AFF',
+                      color: '#fff',
+                      border: 'none',
+                      borderRadius: '14px',
+                      padding: '6px 12px',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                    }}>
+                      + Aufladen
+                    </button>
+                  </div>
+
+                  {/* Language Selector Pill */}
+                  <div style={{ marginBottom: '8px' }}>
+                    <button style={{
+                      background: '#e5e5ea',
+                      border: 'none',
+                      borderRadius: '20px',
+                      padding: '5px 12px',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      color: '#000',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                    }}>
+                      🇩🇪 Deutsch
+                      <span style={{ fontSize: '10px', color: '#8e8e93' }}>↓</span>
+                    </button>
+                  </div>
+
+                  {/* Phone Number */}
+                  <div style={{ textAlign: 'center', marginBottom: '2px' }}>
+                    <div style={{ fontSize: '24px', fontWeight: '700', color: '#000', letterSpacing: '0.5px', fontVariantNumeric: 'tabular-nums' }}>
+                      001 602 337 554
+                    </div>
+                    <div style={{ fontSize: '10px', color: '#8e8e93', marginTop: '2px' }}>
+                      🇺🇸 USA / Kanada · 1,19 €/Min
+                    </div>
+                  </div>
+
+                  {/* Language of counterpart */}
+                  <div style={{
+                    background: '#e5e5ea',
+                    borderRadius: '10px',
+                    padding: '7px 12px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '8px',
+                    marginTop: '6px',
+                  }}>
+                    <span style={{ fontSize: '10px', color: '#8e8e93' }}>Sprache des Gegenübers</span>
+                    <span style={{ fontSize: '10px', fontWeight: '600', color: '#000' }}>🇬🇧 English &gt;</span>
+                  </div>
+
+                  {/* Dial Pad */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px', marginBottom: '8px' }}>
+                    {[
+                      { num: '1', sub: '' },
+                      { num: '2', sub: 'ABC' },
+                      { num: '3', sub: 'DEF' },
+                      { num: '4', sub: 'GHI' },
+                      { num: '5', sub: 'JKL' },
+                      { num: '6', sub: 'MNO' },
+                      { num: '7', sub: 'PQRS' },
+                      { num: '8', sub: 'TUV' },
+                      { num: '9', sub: 'WXYZ' },
+                      { num: '+', sub: '' },
+                      { num: '0', sub: '' },
+                      { num: '⌫', sub: '' },
+                    ].map(({ num, sub }) => (
+                      <button
+                        key={num}
                         style={{
-                          background: line.speaker === 'DE' ? 'rgba(0,212,255,0.15)' : 'rgba(245,158,11,0.15)',
-                          color:      line.speaker === 'DE' ? '#00D4FF' : '#F59E0B',
-                          fontSize: '9px',
-                          fontFamily: 'var(--font-syne, Syne)',
-                          marginTop: '1px',
+                          background: '#fff',
+                          border: 'none',
+                          borderRadius: '10px',
+                          padding: '6px 4px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          boxShadow: '0 1px 3px rgba(0,0,0,0.12)',
+                          cursor: 'pointer',
+                          minHeight: '36px',
                         }}
                       >
-                        {line.speaker}
-                      </span>
-                      <span
-                        className="text-xs leading-relaxed"
-                        style={{ color: line.speaker === 'DE' ? '#CBD5E1' : '#94A3B8' }}
-                      >
-                        {line.text}
-                      </span>
+                        <span style={{ fontSize: '16px', fontWeight: '400', color: '#000', lineHeight: 1.1 }}>{num}</span>
+                        {sub && <span style={{ fontSize: '7px', color: '#8e8e93', fontWeight: '600', letterSpacing: '0.5px' }}>{sub}</span>}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Call Button */}
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '6px' }}>
+                    <button style={{
+                      width: '56px',
+                      height: '56px',
+                      borderRadius: '50%',
+                      background: '#34C759',
+                      border: 'none',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 4px 14px rgba(52,199,89,0.4)',
+                    }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Bottom Nav */}
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                  alignItems: 'center',
+                  padding: '8px 0 16px',
+                  borderTop: '1px solid rgba(0,0,0,0.08)',
+                  background: '#f9f9f9',
+                }}>
+                  {[
+                    {
+                      label: 'Anruf',
+                      active: true,
+                      icon: (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#007AFF">
+                          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                      ),
+                    },
+                    {
+                      label: 'Verlauf',
+                      active: false,
+                      icon: (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" strokeWidth="1.8" strokeLinecap="round">
+                          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                      ),
+                    },
+                    {
+                      label: 'Profil',
+                      active: false,
+                      icon: (
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" strokeWidth="1.8" strokeLinecap="round">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                        </svg>
+                      ),
+                    },
+                  ].map(({ label, active, icon }) => (
+                    <div key={label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
+                      {icon}
+                      <span style={{ fontSize: '9px', fontWeight: active ? '600' : '400', color: active ? '#007AFF' : '#8e8e93' }}>{label}</span>
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Bottom bar */}
-              <div
-                className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-4 py-4 px-5"
-                style={{
-                  background: 'linear-gradient(to top, #050810, #0a0d14)',
-                  borderTop: '1px solid rgba(255,255,255,0.06)',
-                }}
-              >
-                <button
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)' }}
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#EF4444">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                  </svg>
-                </button>
-                <button
-                  className="w-14 h-14 rounded-full flex items-center justify-center glow-cyan-sm animate-cyan-pulse"
-                  style={{ background: 'rgba(0,212,255,0.2)', border: '1px solid rgba(0,212,255,0.4)' }}
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#00D4FF">
-                    <rect x="9" y="2" width="6" height="11" rx="3"/>
-                    <path d="M5 11a7 7 0 0 0 14 0" stroke="#00D4FF" strokeWidth="2" fill="none" strokeLinecap="round"/>
-                    <line x1="12" y1="18" x2="12" y2="22" stroke="#00D4FF" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </button>
-                <button
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round">
-                    <line x1="1" y1="1" x2="23" y2="23"/>
-                    <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/>
-                    <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"/>
-                    <line x1="12" y1="19" x2="12" y2="23"/>
-                    <line x1="8" y1="23" x2="16" y2="23"/>
-                  </svg>
-                </button>
               </div>
             </div>
 
             {/* Floating badges */}
             <div
-              className="absolute -left-16 top-24 px-3 py-2 rounded-xl text-xs font-bold glass glow-cyan-sm"
+              className="absolute glass glow-cyan-sm"
               style={{
+                left: '-60px',
+                top: '80px',
+                padding: '6px 12px',
+                borderRadius: '12px',
+                fontSize: '11px',
+                fontWeight: '700',
                 color: '#00D4FF',
                 fontFamily: 'var(--font-syne, Syne)',
                 animation: 'float 5s ease-in-out infinite',
                 animationDelay: '0.5s',
+                whiteSpace: 'nowrap',
               }}
             >
               ⚡ &lt;0.5s
             </div>
             <div
-              className="absolute -right-14 bottom-32 px-3 py-2 rounded-xl text-xs font-bold glass"
+              className="absolute glass"
               style={{
+                right: '-56px',
+                bottom: '120px',
+                padding: '6px 12px',
+                borderRadius: '12px',
+                fontSize: '11px',
+                fontWeight: '700',
                 color: '#F59E0B',
                 fontFamily: 'var(--font-syne, Syne)',
                 animation: 'float 6s ease-in-out infinite',
                 animationDelay: '1.2s',
                 border: '1px solid rgba(245,158,11,0.2)',
+                whiteSpace: 'nowrap',
               }}
             >
               🔒 EU-Server

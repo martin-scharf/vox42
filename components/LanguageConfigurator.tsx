@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -23,20 +23,21 @@ const LANGUAGES = [
 
 type LangCode = typeof LANGUAGES[number]['code'];
 
+// Home countries of each language (where that language is primarily spoken)
 const LANGUAGE_COUNTRIES: Record<LangCode, string[]> = {
-  es: ['ES', 'MX', 'AR', 'CO', 'PE', 'VE', 'CL', 'EC', 'BO', 'PY', 'UY', 'CR', 'CU', 'DO', 'GT', 'HN', 'NI', 'PA', 'SV'],
-  pt: ['PT', 'BR', 'AO', 'MZ', 'CV', 'GW', 'ST', 'TL'],
-  fr: ['FR', 'BE', 'CH', 'CA', 'LU', 'MA', 'SN', 'CI', 'CM', 'CD', 'MG'],
+  es: ['ES','MX','AR','CO','PE','VE','CL','EC','BO','PY','UY','CR','CU','DO','GT','HN','NI','PA','SV','GQ'],
+  pt: ['PT','BR','AO','MZ','CV','GW','ST','TL'],
+  fr: ['FR','BE','CH','CA','LU','MA','SN','CI','CM','CD','MG','ML','NE','BF','TG','BJ','GA','CG','TD','CF','GN','HT','DJ','MU','SC'],
   ja: ['JP'],
-  ru: ['RU', 'BY', 'KZ', 'KG'],
-  zh: ['CN', 'TW', 'HK', 'SG', 'MY'],
-  de: ['DE', 'AT', 'CH', 'LU', 'LI'],
+  ru: ['RU','BY','KZ','KG','TJ','UZ'],
+  zh: ['CN','TW','HK','SG','MY'],
+  de: ['DE','AT','CH','LU','LI','BE'],
   ko: ['KR'],
   hi: ['IN'],
   id: ['ID'],
   vi: ['VN'],
-  it: ['IT', 'CH', 'SM', 'VA'],
-  en: ['US', 'GB', 'CA', 'AU', 'NZ', 'IE', 'ZA', 'IN', 'SG', 'PH', 'NG', 'GH', 'KE'],
+  it: ['IT','CH','SM'],
+  en: ['US','GB','CA','AU','NZ','IE','ZA','NG','SG','PH','GH','KE','ZW','LR','SL','GM'],
 };
 
 const ZONE_A = ['DE', 'AT', 'CH', 'LU', 'LI'];
@@ -59,8 +60,6 @@ const ZONE_RATES: Record<string, string> = {
 
 // ─── Map Data ─────────────────────────────────────────────────────────────────
 
-// SVG viewBox: 0 0 900 480
-// Country rects: [x, y, w, h, code]
 type CountryRect = { x: number; y: number; w: number; h: number; code: string };
 
 const MAP_COUNTRIES: CountryRect[] = [
@@ -69,14 +68,29 @@ const MAP_COUNTRIES: CountryRect[] = [
   { x: 70,  y: 100, w: 200, h: 100, code: 'US' },
   { x: 92,  y: 200, w: 100, h: 70,  code: 'MX' },
 
+  // Central America (small, grouped)
+  { x: 107, y: 258, w: 18,  h: 12,  code: 'GT' },
+  { x: 125, y: 258, w: 16,  h: 12,  code: 'HN' },
+  { x: 107, y: 270, w: 18,  h: 12,  code: 'SV' },
+  { x: 125, y: 270, w: 16,  h: 12,  code: 'NI' },
+  { x: 107, y: 282, w: 18,  h: 12,  code: 'CR' },
+  { x: 125, y: 282, w: 16,  h: 12,  code: 'PA' },
+
+  // Caribbean
+  { x: 175, y: 220, w: 22,  h: 14,  code: 'CU' },
+  { x: 197, y: 234, w: 14,  h: 10,  code: 'DO' },
+
   // South America
-  { x: 118, y: 265, w: 60,  h: 55,  code: 'CO' },
-  { x: 168, y: 260, w: 58,  h: 38,  code: 'VE' },
-  { x: 106, y: 305, w: 36,  h: 35,  code: 'EC' },
-  { x: 106, y: 335, w: 68,  h: 78,  code: 'PE' },
-  { x: 172, y: 278, w: 148, h: 160, code: 'BR' },
-  { x: 118, y: 363, w: 24,  h: 108, code: 'CL' },
-  { x: 142, y: 383, w: 64,  h: 92,  code: 'AR' },
+  { x: 118, y: 295, w: 60,  h: 55,  code: 'CO' },
+  { x: 168, y: 290, w: 58,  h: 38,  code: 'VE' },
+  { x: 106, y: 335, w: 36,  h: 35,  code: 'EC' },
+  { x: 106, y: 365, w: 68,  h: 78,  code: 'PE' },
+  { x: 172, y: 308, w: 148, h: 160, code: 'BR' },
+  { x: 118, y: 393, w: 24,  h: 78,  code: 'CL' },
+  { x: 142, y: 413, w: 64,  h: 62,  code: 'AR' },
+  { x: 206, y: 435, w: 34,  h: 32,  code: 'UY' },
+  { x: 174, y: 430, w: 30,  h: 22,  code: 'PY' },
+  { x: 116, y: 348, w: 22,  h: 18,  code: 'BO' },
 
   // Europe
   { x: 330, y: 85,  w: 25,  h: 25,  code: 'IE' },
@@ -93,14 +107,9 @@ const MAP_COUNTRIES: CountryRect[] = [
   { x: 415, y: 126, w: 40,  h: 20,  code: 'AT' },
   { x: 403, y: 146, w: 35,  h: 80,  code: 'IT' },
   { x: 420, y: 146, w: 8,   h: 8,   code: 'SM' },
-  { x: 415, y: 152, w: 7,   h: 7,   code: 'VA' },
   { x: 432, y: 86,  w: 50,  h: 44,  code: 'PL' },
-
-  // Eastern Europe
   { x: 447, y: 80,  w: 37,  h: 29,  code: 'BY' },
   { x: 443, y: 108, w: 67,  h: 40,  code: 'UA' },
-
-  // Turkey/Levant
   { x: 446, y: 148, w: 82,  h: 40,  code: 'TR' },
   { x: 467, y: 185, w: 22,  h: 15,  code: 'CY' },
 
@@ -110,6 +119,8 @@ const MAP_COUNTRIES: CountryRect[] = [
   // Central Asia
   { x: 523, y: 130, w: 100, h: 66,  code: 'KZ' },
   { x: 592, y: 162, w: 38,  h: 24,  code: 'KG' },
+  { x: 570, y: 162, w: 22,  h: 24,  code: 'TJ' },
+  { x: 535, y: 162, w: 35,  h: 24,  code: 'UZ' },
 
   // South Asia
   { x: 582, y: 190, w: 80,  h: 110, code: 'IN' },
@@ -122,19 +133,51 @@ const MAP_COUNTRIES: CountryRect[] = [
   { x: 724, y: 147, w: 24,  h: 34,  code: 'KR' },
   { x: 686, y: 238, w: 13,  h: 13,  code: 'SG' },
   { x: 658, y: 224, w: 48,  h: 28,  code: 'MY' },
+  { x: 660, y: 252, w: 68,  h: 50,  code: 'ID' },
+  { x: 710, y: 210, w: 54,  h: 40,  code: 'PH' },
+  { x: 662, y: 195, w: 36,  h: 30,  code: 'VN' },
 
   // Africa
   { x: 341, y: 188, w: 50,  h: 40,  code: 'MA' },
   { x: 315, y: 242, w: 38,  h: 27,  code: 'SN' },
   { x: 337, y: 261, w: 39,  h: 29,  code: 'CI' },
-  { x: 397, y: 294, w: 58,  h: 68,  code: 'AO' },
+  { x: 328, y: 256, w: 12,  h: 12,  code: 'GM' },
+  { x: 316, y: 261, w: 14,  h: 22,  code: 'GN' },
+  { x: 346, y: 285, w: 30,  h: 22,  code: 'GH' },
+  { x: 367, y: 255, w: 28,  h: 22,  code: 'BJ' },
+  { x: 358, y: 242, w: 22,  h: 18,  code: 'BF' },
+  { x: 380, y: 230, w: 34,  h: 28,  code: 'ML' },
+  { x: 394, y: 214, w: 46,  h: 20,  code: 'NE' },
+  { x: 393, y: 258, w: 26,  h: 22,  code: 'TG' },
+  { x: 375, y: 275, w: 28,  h: 26,  code: 'BJ' },
+  { x: 393, y: 275, w: 40,  h: 28,  code: 'NG' },
+  { x: 395, y: 230, w: 30,  h: 30,  code: 'CM' },
+  { x: 418, y: 234, w: 36,  h: 30,  code: 'CF' },
+  { x: 437, y: 220, w: 22,  h: 18,  code: 'TD' },
+  { x: 380, y: 300, w: 28,  h: 22,  code: 'GA' },
+  { x: 406, y: 300, w: 34,  h: 22,  code: 'CG' },
+  { x: 397, y: 320, w: 58,  h: 68,  code: 'AO' },
   { x: 452, y: 302, w: 33,  h: 68,  code: 'MZ' },
-  { x: 406, y: 370, w: 68,  h: 48,  code: 'ZA' },
+  { x: 406, y: 380, w: 68,  h: 48,  code: 'ZA' },
+  { x: 454, y: 258, w: 34,  h: 36,  code: 'CD' },
+  { x: 484, y: 310, w: 32,  h: 26,  code: 'MG' },
+  { x: 462, y: 265, w: 14,  h: 18,  code: 'KE' },
+  { x: 456, y: 245, w: 18,  h: 18,  code: 'DJ' },
+  { x: 462, y: 380, w: 26,  h: 26,  code: 'ZW' },
+  { x: 446, y: 390, w: 16,  h: 26,  code: 'LR' },
+  { x: 318, y: 270, w: 14,  h: 14,  code: 'SL' },
   { x: 299, y: 241, w: 14,  h: 12,  code: 'CV' },
+  { x: 502, y: 308, w: 14,  h: 16,  code: 'MU' },
+  { x: 510, y: 332, w: 12,  h: 14,  code: 'SC' },
+  { x: 440, y: 242, w: 22,  h: 18,  code: 'HT' },
 
   // Oceania
   { x: 656, y: 308, w: 127, h: 86,  code: 'AU' },
   { x: 760, y: 344, w: 28,  h: 54,  code: 'NZ' },
+
+  // West Africa small
+  { x: 328, y: 270, w: 10,  h: 14,  code: 'GW' },
+  { x: 360, y: 275, w: 22,  h: 18,  code: 'CI' },
 ];
 
 // ─── World Map Component ───────────────────────────────────────────────────────
@@ -147,7 +190,6 @@ function WorldMap({ activeCountries }: { activeCountries: Set<string> }) {
       style={{ maxWidth: '900px', display: 'block', margin: '0 auto' }}
       aria-hidden
     >
-      {/* Ocean background */}
       <rect width="900" height="480" fill="rgba(0,0,0,0)" />
 
       {/* Continent hint lines */}
@@ -155,14 +197,14 @@ function WorldMap({ activeCountries }: { activeCountries: Set<string> }) {
       <rect x="315" y="60"  width="300" height="390" rx="4" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.025)" strokeWidth="1"/>
       <rect x="460" y="15"  width="320" height="330" rx="4" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.025)" strokeWidth="1"/>
       <rect x="295" y="180" width="200" height="250" rx="4" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.025)" strokeWidth="1"/>
-      <rect x="640" y="0" width="250" height="290" rx="4" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.025)" strokeWidth="1"/>
+      <rect x="640" y="0"   width="250" height="290" rx="4" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.025)" strokeWidth="1"/>
 
       {/* Countries */}
       {MAP_COUNTRIES.map(({ x, y, w, h, code }) => {
         const isActive = activeCountries.has(code);
         const zone = getZone(code);
         return (
-          <g key={code}>
+          <g key={`${code}-${x}-${y}`}>
             <rect
               x={x} y={y} width={w} height={h}
               rx="3"
@@ -181,7 +223,6 @@ function WorldMap({ activeCountries }: { activeCountries: Set<string> }) {
                 transition: 'all 0.25s ease',
               }}
             />
-            {/* Country label — only show for larger rects */}
             {w >= 22 && h >= 18 && (
               <text
                 x={x + w / 2}
@@ -208,18 +249,31 @@ function WorldMap({ activeCountries }: { activeCountries: Set<string> }) {
 
 export default function LanguageConfigurator() {
   const t = useTranslations('configurator');
-  const [sourceLang, setSourceLang] = useState<LangCode>('de');
-  const [targetLang, setTargetLang] = useState<LangCode | null>(null);
 
-  const targetLanguages = LANGUAGES.filter(l => l.code !== sourceLang);
-  const activeCountriesArr = targetLang
-    ? (LANGUAGE_COUNTRIES[targetLang] ?? [])
-    : [];
-  const activeCountries = new Set<string>(activeCountriesArr);
+  // All languages active by default
+  const [activeLangs, setActiveLangs] = useState<Set<string>>(
+    new Set(LANGUAGES.map(l => l.code))
+  );
 
-  const targetCountries = targetLang ? LANGUAGE_COUNTRIES[targetLang] : [];
-  const zones = Array.from(new Set(targetCountries.map(getZone))).sort();
-  const lowestZone = zones[0] ?? 'D';
+  const toggleLang = (code: string) => {
+    setActiveLangs(prev => {
+      if (prev.size === 1 && prev.has(code)) return prev; // mindestens 1
+      const next = new Set(prev);
+      next.has(code) ? next.delete(code) : next.add(code);
+      return next;
+    });
+  };
+
+  // Combined home countries of all active languages
+  const activeHomeCountries = useMemo(() => {
+    const all: string[] = [];
+    LANGUAGES.forEach(l => {
+      if (activeLangs.has(l.code)) all.push(...LANGUAGE_COUNTRIES[l.code]);
+    });
+    return Array.from(new Set(all));
+  }, [activeLangs]);
+
+  const activeCountriesSet = new Set(activeHomeCountries);
 
   return (
     <section
@@ -256,7 +310,7 @@ export default function LanguageConfigurator() {
           </p>
         </div>
 
-        {/* Controls */}
+        {/* Language Toggle Buttons */}
         <div
           className="rounded-2xl p-6 mb-6"
           style={{
@@ -264,69 +318,37 @@ export default function LanguageConfigurator() {
             border: '1px solid rgba(255,255,255,0.08)',
           }}
         >
-          {/* Source language selector */}
-          <div className="mb-6">
-            <label
-              className="block text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: '#64748B', fontFamily: 'var(--font-syne, Syne)' }}
-            >
-              {t('speaksLabel')}
-            </label>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
-              {LANGUAGES.map(lang => (
-                <button
-                  key={lang.code}
-                  onClick={() => {
-                    setSourceLang(lang.code as LangCode);
-                    if (targetLang === lang.code) setTargetLang(null);
-                  }}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-150"
-                  style={{
-                    background: sourceLang === lang.code ? 'rgba(0,212,255,0.15)' : 'rgba(255,255,255,0.04)',
-                    border: `1px solid ${sourceLang === lang.code ? 'rgba(0,212,255,0.4)' : 'rgba(255,255,255,0.07)'}`,
-                    color: sourceLang === lang.code ? '#00D4FF' : '#94A3B8',
-                    fontFamily: 'var(--font-dm-sans, DM Sans)',
-                    boxShadow: sourceLang === lang.code ? '0 0 12px rgba(0,212,255,0.15)' : '',
-                  }}
-                >
-                  <span>{lang.flag}</span>
-                  <span className="truncate text-xs">{lang.label}</span>
-                </button>
-              ))}
-            </div>
+          <label
+            className="block text-xs font-bold uppercase tracking-widest mb-3"
+            style={{ color: '#64748B', fontFamily: 'var(--font-syne, Syne)' }}
+          >
+            Unterstützte Sprachen — klicken zum Deaktivieren
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {LANGUAGES.map(lang => (
+              <button
+                key={lang.code}
+                onClick={() => toggleLang(lang.code)}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-150"
+                style={{
+                  border: activeLangs.has(lang.code) ? '1px solid #00D4FF' : '1px solid rgba(255,255,255,0.1)',
+                  background: activeLangs.has(lang.code) ? 'rgba(0,212,255,0.12)' : 'rgba(255,255,255,0.04)',
+                  color: activeLangs.has(lang.code) ? '#00D4FF' : '#64748B',
+                  fontFamily: 'var(--font-dm-sans, DM Sans)',
+                  boxShadow: activeLangs.has(lang.code) ? '0 0 12px rgba(0,212,255,0.15)' : '',
+                }}
+              >
+                <span>{lang.flag}</span>
+                <span className="text-xs">{lang.label}</span>
+              </button>
+            ))}
           </div>
-
-          {/* Target language selector */}
-          <div>
-            <label
-              className="block text-xs font-bold uppercase tracking-widest mb-3"
-              style={{ color: '#64748B', fontFamily: 'var(--font-syne, Syne)' }}
-            >
-              {t('translatesTo')}
-            </label>
-            <div className="flex flex-wrap gap-2">
-              {targetLanguages.map(lang => (
-                <button
-                  key={lang.code}
-                  onClick={() => setTargetLang(prev => prev === lang.code ? null : lang.code as LangCode)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-150"
-                  style={{
-                    background: targetLang === lang.code ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.04)',
-                    border: `1px solid ${targetLang === lang.code ? 'rgba(245,158,11,0.4)' : 'rgba(255,255,255,0.07)'}`,
-                    color: targetLang === lang.code ? '#F59E0B' : '#94A3B8',
-                    fontFamily: 'var(--font-dm-sans, DM Sans)',
-                    boxShadow: targetLang === lang.code ? '0 0 12px rgba(245,158,11,0.2)' : '',
-                  }}
-                >
-                  <span>{lang.flag}</span>
-                  <span className="text-xs">{lang.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
+          <p className="mt-3 text-xs" style={{ color: '#334155' }}>
+            {activeLangs.size} / {LANGUAGES.length} Sprachen aktiv · {activeHomeCountries.length} Länder auf der Karte
+          </p>
         </div>
 
-        {/* Map + Zone Info */}
+        {/* Map */}
         <div
           className="rounded-2xl overflow-hidden"
           style={{
@@ -334,63 +356,47 @@ export default function LanguageConfigurator() {
             border: '1px solid rgba(255,255,255,0.07)',
           }}
         >
-          {/* Zone info bar */}
-          {targetLang ? (
-            <div
-              className="flex items-center justify-between px-5 py-3 flex-wrap gap-3"
-              style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
-            >
-              <div className="flex items-center gap-3">
-                <span
-                  className="text-sm font-bold"
-                  style={{ color: '#00D4FF', fontFamily: 'var(--font-syne, Syne)' }}
-                >
-                  {LANGUAGES.find(l => l.code === sourceLang)?.flag}
-                  {' → '}
-                  {LANGUAGES.find(l => l.code === targetLang)?.flag}
-                  {' '}
-                  {LANGUAGES.find(l => l.code === targetLang)?.label}
-                </span>
-                <span className="text-xs" style={{ color: '#334155' }}>
-                  {activeCountries.size} {activeCountries.size === 1 ? 'Land' : 'Länder'}
-                </span>
-              </div>
-              <div
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold"
-                style={{
-                  background: 'rgba(245,158,11,0.1)',
-                  border: '1px solid rgba(245,158,11,0.25)',
-                  color: '#F59E0B',
-                  fontFamily: 'var(--font-syne, Syne)',
-                }}
+          {/* Info bar */}
+          <div
+            className="flex items-center justify-between px-5 py-3 flex-wrap gap-3"
+            style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+          >
+            <div className="flex items-center gap-3">
+              <span
+                className="text-sm font-bold"
+                style={{ color: '#00D4FF', fontFamily: 'var(--font-syne, Syne)' }}
               >
-                Zone {lowestZone} — {t('fromLabel')} {ZONE_RATES[lowestZone]}
-              </div>
+                Heimatländer aktiver Sprachen
+              </span>
+              <span className="text-xs" style={{ color: '#334155' }}>
+                {activeHomeCountries.length} {activeHomeCountries.length === 1 ? 'Land' : 'Länder'}
+              </span>
             </div>
-          ) : (
             <div
-              className="px-5 py-3 text-center text-sm"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold"
               style={{
-                borderBottom: '1px solid rgba(255,255,255,0.06)',
-                color: '#334155',
+                background: 'rgba(0,212,255,0.1)',
+                border: '1px solid rgba(0,212,255,0.25)',
+                color: '#00D4FF',
+                fontFamily: 'var(--font-syne, Syne)',
               }}
             >
-              {t('selectTarget')}
+              {activeLangs.size} Sprachen aktiv
             </div>
-          )}
+          </div>
 
           {/* Map */}
           <div className="p-4 sm:p-6">
-            <WorldMap activeCountries={activeCountries} />
+            <WorldMap activeCountries={activeCountriesSet} />
           </div>
 
           {/* Active countries list */}
-          {targetLang && activeCountries.size > 0 && (
+          {activeHomeCountries.length > 0 && (
             <div
               className="px-5 py-4 flex flex-wrap gap-2"
               style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
             >
-              {Array.from(activeCountries).map(country => (
+              {activeHomeCountries.slice(0, 40).map(country => (
                 <span
                   key={country}
                   className="px-2 py-1 rounded-lg text-xs font-bold"
@@ -405,6 +411,11 @@ export default function LanguageConfigurator() {
                   <span className="ml-1 opacity-60">Z{getZone(country)}</span>
                 </span>
               ))}
+              {activeHomeCountries.length > 40 && (
+                <span className="px-2 py-1 text-xs" style={{ color: '#334155' }}>
+                  +{activeHomeCountries.length - 40} weitere
+                </span>
+              )}
             </div>
           )}
         </div>
