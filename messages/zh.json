@@ -10,7 +10,11 @@
     "headline": "打破语言障碍，畅通无阻地通话",
     "subheadline": "Vox42 实时翻译您的电话通话——您用自己的语言聆听，对方用他们的语言聆听。",
     "ctaAppStore": "在 App Store 下载",
-    "ctaGooglePlay": "在 Google Play 获取"
+    "ctaGooglePlay": "在 Google Play 获取",
+    "badge1": "无需订阅",
+    "badge2": "实时转录",
+    "ctaPrimary": "免费试用",
+    "ctaSecondary": "了解工作原理"
   },
   "howItWorks": {
     "title": "操作简便",
@@ -34,8 +38,11 @@
     ]
   },
   "languages": {
-    "title": "12种语言，一款应用",
-    "subtitle": "从德语到中文——Vox42 跨越全球最常见的语言障碍。"
+    "title": "13种目标语言。70+种源语言。",
+    "subtitle": "系统自动检测您说的语言——从70多种可能语言中。您将获得翻译成13种目标语言之一的内容。",
+    "outputTitle": "目标语言（音频+转录）",
+    "inputTitle": "识别的源语言",
+    "inputCount": "自动检测70+种语言"
   },
   "useCases": {
     "title": "适用于各种场景",
@@ -78,7 +85,65 @@
         "desc": "适合频繁通话用户及商务旅行者。超过330分钟。"
       }
     ],
-    "note": "余额永不过期。支持 Apple Pay、信用卡及 Stripe 付款。"
+    "note": "余额永不过期。支持 Apple Pay、信用卡及 Stripe 付款。",
+    "zonesTitle": "透明区域定价",
+    "fromLabel": "起",
+    "noSub": "无需订阅",
+    "noContract": "无需合同",
+    "creditsTitle": "充值套餐",
+    "creditNeverExpires": "余额永不过期",
+    "zones": [
+      {
+        "label": "A区",
+        "countries": "DE, AT, CH, LU, LI",
+        "rate": "0.08 €/分钟",
+        "color": "#00D4FF"
+      },
+      {
+        "label": "B区",
+        "countries": "欧盟国家",
+        "rate": "0.12 €/分钟",
+        "color": "#4ADE80"
+      },
+      {
+        "label": "C区",
+        "countries": "US, CA, AU, JP, KR, SG...",
+        "rate": "0.18 €/分钟",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "D区",
+        "countries": "世界其他地区",
+        "rate": "0.28 €/分钟",
+        "color": "#F97316"
+      }
+    ],
+    "credits": [
+      {
+        "amount": "€5",
+        "label": "Starter",
+        "desc": "~30 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€15",
+        "label": "Standard",
+        "desc": "~100 min Zone A",
+        "popular": true
+      },
+      {
+        "amount": "€30",
+        "label": "Comfort",
+        "desc": "~200 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€50",
+        "label": "Power",
+        "desc": "~330 min Zone A",
+        "popular": false
+      }
+    ]
   },
   "privacy": {
     "title": "您的数据属于您",
@@ -156,5 +221,12 @@
   },
   "darkMode": {
     "toggle": "切换深色模式"
+  },
+  "configurator": {
+    "title": "您的语言配置器",
+    "subtitle": "选择您的语言，了解可以翻译到哪些地方",
+    "speaksLabel": "我说",
+    "selectTarget": "选择目标语言",
+    "translatesTo": "翻译至"
   }
 }

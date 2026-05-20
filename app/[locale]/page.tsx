@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import Languages from '@/components/Languages';
+import LanguageConfigurator from '@/components/LanguageConfigurator';
 import UseCases from '@/components/UseCases';
 import Pricing from '@/components/Pricing';
 import Privacy from '@/components/Privacy';
@@ -29,6 +30,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Hero />
         <HowItWorks />
         <Languages />
+        <LanguageConfigurator />
         <UseCases />
         <Pricing />
         <Privacy />

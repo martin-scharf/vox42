@@ -10,7 +10,11 @@
     "headline": "Дзвінки без мовних бар'єрів",
     "subheadline": "Vox42 перекладає ваші телефонні розмови в реальному часі — ви чуєте все своєю мовою, ваш співрозмовник — своєю.",
     "ctaAppStore": "Завантажити в App Store",
-    "ctaGooglePlay": "Доступно в Google Play"
+    "ctaGooglePlay": "Доступно в Google Play",
+    "badge1": "Без підписки",
+    "badge2": "Жива транскрипція",
+    "ctaPrimary": "Спробувати безкоштовно",
+    "ctaSecondary": "Як це працює"
   },
   "howItWorks": {
     "title": "Все дуже просто",
@@ -34,8 +38,11 @@
     ]
   },
   "languages": {
-    "title": "12 мов, один додаток",
-    "subtitle": "Від німецької до китайської — Vox42 долає найпоширеніші мовні бар'єри у світі."
+    "title": "13 цільових мов. 70+ вихідних мов.",
+    "subtitle": "Система автоматично визначає, якою мовою ви говорите — з понад 70 можливих. Ви отримуєте переклад на одну з 13 цільових мов.",
+    "outputTitle": "Цільові мови (аудіо + транскрипція)",
+    "inputTitle": "Розпізнані вихідні мови",
+    "inputCount": "70+ мов визначаються автоматично"
   },
   "useCases": {
     "title": "Для будь-якої ситуації",
@@ -78,7 +85,65 @@
         "desc": "Для активних користувачів і ділових мандрівників. Понад 330 хвилин."
       }
     ],
-    "note": "Баланс не вигорає. Приймаються Apple Pay, кредитна картка та Stripe."
+    "note": "Баланс не вигорає. Приймаються Apple Pay, кредитна картка та Stripe.",
+    "zonesTitle": "Прозорі тарифи за зонами",
+    "fromLabel": "від",
+    "noSub": "Без підписки",
+    "noContract": "Без контракту",
+    "creditsTitle": "Пакети поповнення",
+    "creditNeverExpires": "Баланс не згорає",
+    "zones": [
+      {
+        "label": "Зона A",
+        "countries": "DE, AT, CH, LU, LI",
+        "rate": "0,08 €/хв",
+        "color": "#00D4FF"
+      },
+      {
+        "label": "Зона B",
+        "countries": "Країни ЄС",
+        "rate": "0,12 €/хв",
+        "color": "#4ADE80"
+      },
+      {
+        "label": "Зона C",
+        "countries": "US, CA, AU, JP, KR, SG...",
+        "rate": "0,18 €/хв",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "Зона D",
+        "countries": "Решта світу",
+        "rate": "0,28 €/хв",
+        "color": "#F97316"
+      }
+    ],
+    "credits": [
+      {
+        "amount": "€5",
+        "label": "Starter",
+        "desc": "~30 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€15",
+        "label": "Standard",
+        "desc": "~100 min Zone A",
+        "popular": true
+      },
+      {
+        "amount": "€30",
+        "label": "Comfort",
+        "desc": "~200 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€50",
+        "label": "Power",
+        "desc": "~330 min Zone A",
+        "popular": false
+      }
+    ]
   },
   "privacy": {
     "title": "Ваші дані належать вам",
@@ -156,5 +221,12 @@
   },
   "darkMode": {
     "toggle": "Перемкнути темний режим"
+  },
+  "configurator": {
+    "title": "Ваш мовний конфігуратор",
+    "subtitle": "Оберіть мову та дізнайтеся, на які мови можна перекладати",
+    "speaksLabel": "Я розмовляю",
+    "selectTarget": "Обрати цільову мову",
+    "translatesTo": "Перекладає на"
   }
 }

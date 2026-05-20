@@ -10,7 +10,11 @@
     "headline": "Dil engeli olmadan telefon görüşmeleri",
     "subheadline": "Vox42, telefon görüşmelerinizi gerçek zamanlı olarak çevirir — siz her şeyi kendi dilinizde duyarsınız, karşınızdaki kişi kendi dilinde.",
     "ctaAppStore": "App Store'dan İndir",
-    "ctaGooglePlay": "Google Play'den Al"
+    "ctaGooglePlay": "Google Play'den Al",
+    "badge1": "Abonelik yok",
+    "badge2": "Canlı transkripsiyon",
+    "ctaPrimary": "Ücretsiz dene",
+    "ctaSecondary": "Nasıl çalışır"
   },
   "howItWorks": {
     "title": "Bu kadar basit",
@@ -34,8 +38,11 @@
     ]
   },
   "languages": {
-    "title": "12 dil, bir uygulama",
-    "subtitle": "Almancadan Çinceye — Vox42, dünyanın en yaygın dil engellerini aşar."
+    "title": "13 hedef dil. 70+ kaynak dil.",
+    "subtitle": "Sistem hangi dili konuştuğunuzu otomatik olarak algılar — 70'ten fazla olası dil arasından. 13 hedef dilden birine çeviri alırsınız.",
+    "outputTitle": "Hedef diller (ses + transkripsiyon)",
+    "inputTitle": "Tanınan kaynak diller",
+    "inputCount": "70+ dil otomatik algılanır"
   },
   "useCases": {
     "title": "Her durum için",
@@ -78,7 +85,65 @@
         "desc": "Çok arayanlar ve iş seyahati yapanlar için. 330 dakikadan fazla."
       }
     ],
-    "note": "Kredi asla sona ermez. Apple Pay, kredi kartı ve Stripe kabul edilir."
+    "note": "Kredi asla sona ermez. Apple Pay, kredi kartı ve Stripe kabul edilir.",
+    "zonesTitle": "Şeffaf bölge fiyatlandırması",
+    "fromLabel": "dan itibaren",
+    "noSub": "Abonelik yok",
+    "noContract": "Sözleşme yok",
+    "creditsTitle": "Kredi paketleri",
+    "creditNeverExpires": "Krediler asla sona ermez",
+    "zones": [
+      {
+        "label": "Bölge A",
+        "countries": "DE, AT, CH, LU, LI",
+        "rate": "0,08 €/dak",
+        "color": "#00D4FF"
+      },
+      {
+        "label": "Bölge B",
+        "countries": "AB ülkeleri",
+        "rate": "0,12 €/dak",
+        "color": "#4ADE80"
+      },
+      {
+        "label": "Bölge C",
+        "countries": "US, CA, AU, JP, KR, SG...",
+        "rate": "0,18 €/dak",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "Bölge D",
+        "countries": "Dünyanın geri kalanı",
+        "rate": "0,28 €/dak",
+        "color": "#F97316"
+      }
+    ],
+    "credits": [
+      {
+        "amount": "€5",
+        "label": "Starter",
+        "desc": "~30 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€15",
+        "label": "Standard",
+        "desc": "~100 min Zone A",
+        "popular": true
+      },
+      {
+        "amount": "€30",
+        "label": "Comfort",
+        "desc": "~200 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€50",
+        "label": "Power",
+        "desc": "~330 min Zone A",
+        "popular": false
+      }
+    ]
   },
   "privacy": {
     "title": "Verileriniz size aittir",
@@ -156,5 +221,12 @@
   },
   "darkMode": {
     "toggle": "Karanlık modu aç/kapat"
+  },
+  "configurator": {
+    "title": "Dil Yapılandırıcınız",
+    "subtitle": "Dilinizi seçin ve nereye çeviri yapabileceğinizi keşfedin",
+    "speaksLabel": "Ben konuşurum",
+    "selectTarget": "Hedef dil seçin",
+    "translatesTo": "Şuna çeviri yapar"
   }
 }

@@ -10,7 +10,11 @@
     "headline": "Llamadas sin barreras idiomáticas",
     "subheadline": "Vox42 traduce tus llamadas en tiempo real — escuchas todo en tu idioma, tu interlocutor en el suyo.",
     "ctaAppStore": "Descargar en App Store",
-    "ctaGooglePlay": "Disponible en Google Play"
+    "ctaGooglePlay": "Disponible en Google Play",
+    "badge1": "Sin suscripción",
+    "badge2": "Transcripción en vivo",
+    "ctaPrimary": "Prueba gratis",
+    "ctaSecondary": "Cómo funciona"
   },
   "howItWorks": {
     "title": "Así de fácil",
@@ -34,8 +38,11 @@
     ]
   },
   "languages": {
-    "title": "12 idiomas, una app",
-    "subtitle": "Del alemán al chino — Vox42 rompe las barreras idiomáticas más comunes del mundo."
+    "title": "13 idiomas de destino. 70+ idiomas de origen.",
+    "subtitle": "El sistema detecta automáticamente qué idioma hablas — entre más de 70 posibles. Recibes la traducción en uno de los 13 idiomas de destino.",
+    "outputTitle": "Idiomas de destino (audio + transcripción)",
+    "inputTitle": "Idiomas de origen reconocidos",
+    "inputCount": "70+ idiomas detectados automáticamente"
   },
   "useCases": {
     "title": "Para cada situación",
@@ -78,7 +85,65 @@
         "desc": "Para quienes llaman mucho y viajeros de negocios. Más de 330 minutos."
       }
     ],
-    "note": "El saldo nunca caduca. Se acepta Apple Pay, tarjeta de crédito y Stripe."
+    "note": "El saldo nunca caduca. Se acepta Apple Pay, tarjeta de crédito y Stripe.",
+    "zonesTitle": "Precios por zona transparentes",
+    "fromLabel": "desde",
+    "noSub": "Sin suscripción",
+    "noContract": "Sin contrato",
+    "creditsTitle": "Paquetes de crédito",
+    "creditNeverExpires": "El crédito no caduca",
+    "zones": [
+      {
+        "label": "Zona A",
+        "countries": "DE, AT, CH, LU, LI",
+        "rate": "0,08 €/min",
+        "color": "#00D4FF"
+      },
+      {
+        "label": "Zona B",
+        "countries": "Países UE",
+        "rate": "0,12 €/min",
+        "color": "#4ADE80"
+      },
+      {
+        "label": "Zona C",
+        "countries": "US, CA, AU, JP, KR, SG...",
+        "rate": "0,18 €/min",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "Zona D",
+        "countries": "Resto del mundo",
+        "rate": "0,28 €/min",
+        "color": "#F97316"
+      }
+    ],
+    "credits": [
+      {
+        "amount": "€5",
+        "label": "Starter",
+        "desc": "~30 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€15",
+        "label": "Standard",
+        "desc": "~100 min Zone A",
+        "popular": true
+      },
+      {
+        "amount": "€30",
+        "label": "Comfort",
+        "desc": "~200 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€50",
+        "label": "Power",
+        "desc": "~330 min Zone A",
+        "popular": false
+      }
+    ]
   },
   "privacy": {
     "title": "Tus datos son tuyos",
@@ -156,5 +221,12 @@
   },
   "darkMode": {
     "toggle": "Cambiar modo oscuro"
+  },
+  "configurator": {
+    "title": "Tu configurador de idiomas",
+    "subtitle": "Elige tu idioma y descubre a dónde puedes traducir",
+    "speaksLabel": "Hablo",
+    "selectTarget": "Elegir idioma destino",
+    "translatesTo": "Traduce a"
   }
 }

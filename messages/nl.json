@@ -10,7 +10,11 @@
     "headline": "Bellen zonder taalbarrières",
     "subheadline": "Vox42 vertaalt uw telefoongesprekken in realtime — u hoort alles in uw taal, uw gesprekspartner in de zijne.",
     "ctaAppStore": "Download in de App Store",
-    "ctaGooglePlay": "Verkrijgbaar op Google Play"
+    "ctaGooglePlay": "Verkrijgbaar op Google Play",
+    "badge1": "Geen abonnement",
+    "badge2": "Live transcriptie",
+    "ctaPrimary": "Gratis proberen",
+    "ctaSecondary": "Hoe het werkt"
   },
   "howItWorks": {
     "title": "Zo simpel is het",
@@ -34,8 +38,11 @@
     ]
   },
   "languages": {
-    "title": "12 talen, één app",
-    "subtitle": "Van Duits tot Chinees — Vox42 overbrugt de meest voorkomende taalbarrières ter wereld."
+    "title": "13 doeltalen. 70+ brontalen.",
+    "subtitle": "Het systeem detecteert automatisch welke taal je spreekt — uit meer dan 70 mogelijkheden. Je ontvangt de vertaling in een van de 13 doeltalen.",
+    "outputTitle": "Doeltalen (audio + transcriptie)",
+    "inputTitle": "Herkende brontalen",
+    "inputCount": "70+ talen automatisch herkend"
   },
   "useCases": {
     "title": "Voor elke situatie",
@@ -78,7 +85,65 @@
         "desc": "Voor veelbellers en zakenreizigers. Meer dan 330 minuten."
       }
     ],
-    "note": "Tegoed verloopt nooit. Apple Pay, creditcard en Stripe geaccepteerd."
+    "note": "Tegoed verloopt nooit. Apple Pay, creditcard en Stripe geaccepteerd.",
+    "zonesTitle": "Transparante zoneprijzen",
+    "fromLabel": "vanaf",
+    "noSub": "Geen abonnement",
+    "noContract": "Geen contract",
+    "creditsTitle": "Tegoed pakketten",
+    "creditNeverExpires": "Tegoed verloopt nooit",
+    "zones": [
+      {
+        "label": "Zone A",
+        "countries": "DE, AT, CH, LU, LI",
+        "rate": "0,08 €/min",
+        "color": "#00D4FF"
+      },
+      {
+        "label": "Zone B",
+        "countries": "EU-landen",
+        "rate": "0,12 €/min",
+        "color": "#4ADE80"
+      },
+      {
+        "label": "Zone C",
+        "countries": "US, CA, AU, JP, KR, SG...",
+        "rate": "0,18 €/min",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "Zone D",
+        "countries": "Rest van de wereld",
+        "rate": "0,28 €/min",
+        "color": "#F97316"
+      }
+    ],
+    "credits": [
+      {
+        "amount": "€5",
+        "label": "Starter",
+        "desc": "~30 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€15",
+        "label": "Standard",
+        "desc": "~100 min Zone A",
+        "popular": true
+      },
+      {
+        "amount": "€30",
+        "label": "Comfort",
+        "desc": "~200 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€50",
+        "label": "Power",
+        "desc": "~330 min Zone A",
+        "popular": false
+      }
+    ]
   },
   "privacy": {
     "title": "Uw gegevens zijn van u",
@@ -156,5 +221,12 @@
   },
   "darkMode": {
     "toggle": "Donkere modus wisselen"
+  },
+  "configurator": {
+    "title": "Jouw taalconfigurator",
+    "subtitle": "Kies je taal en ontdek waarheen je kunt vertalen",
+    "speaksLabel": "Ik spreek",
+    "selectTarget": "Kies doeltaal",
+    "translatesTo": "Vertaalt naar"
   }
 }

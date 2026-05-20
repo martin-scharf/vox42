@@ -10,7 +10,11 @@
     "headline": "Rozmowy telefoniczne bez barier językowych",
     "subheadline": "Vox42 tłumaczy Twoje rozmowy telefoniczne w czasie rzeczywistym — słyszysz wszystko w swoim języku, rozmówca w swoim.",
     "ctaAppStore": "Pobierz w App Store",
-    "ctaGooglePlay": "Pobierz w Google Play"
+    "ctaGooglePlay": "Pobierz w Google Play",
+    "badge1": "Bez subskrypcji",
+    "badge2": "Transkrypcja na żywo",
+    "ctaPrimary": "Wypróbuj za darmo",
+    "ctaSecondary": "Jak to działa"
   },
   "howItWorks": {
     "title": "Tak to proste",
@@ -34,8 +38,11 @@
     ]
   },
   "languages": {
-    "title": "12 języków, jedna aplikacja",
-    "subtitle": "Od niemieckiego do chińskiego — Vox42 pokonuje najczęstsze bariery językowe na świecie."
+    "title": "13 języków docelowych. 70+ języków źródłowych.",
+    "subtitle": "System automatycznie rozpoznaje, w jakim języku mówisz — spośród ponad 70 możliwych. Otrzymujesz tłumaczenie na jeden z 13 języków docelowych.",
+    "outputTitle": "Języki docelowe (audio + transkrypcja)",
+    "inputTitle": "Rozpoznane języki źródłowe",
+    "inputCount": "70+ języków wykrywanych automatycznie"
   },
   "useCases": {
     "title": "Na każdą sytuację",
@@ -78,7 +85,65 @@
         "desc": "Dla dużych użytkowników i podróżujących służbowo. Ponad 330 minut."
       }
     ],
-    "note": "Środki nigdy nie wygasają. Akceptujemy Apple Pay, karty kredytowe i Stripe."
+    "note": "Środki nigdy nie wygasają. Akceptujemy Apple Pay, karty kredytowe i Stripe.",
+    "zonesTitle": "Przejrzyste ceny strefowe",
+    "fromLabel": "od",
+    "noSub": "Bez subskrypcji",
+    "noContract": "Bez umowy",
+    "creditsTitle": "Pakiety doładowań",
+    "creditNeverExpires": "Środki nie wygasają",
+    "zones": [
+      {
+        "label": "Strefa A",
+        "countries": "DE, AT, CH, LU, LI",
+        "rate": "0,08 €/min",
+        "color": "#00D4FF"
+      },
+      {
+        "label": "Strefa B",
+        "countries": "Kraje UE",
+        "rate": "0,12 €/min",
+        "color": "#4ADE80"
+      },
+      {
+        "label": "Strefa C",
+        "countries": "US, CA, AU, JP, KR, SG...",
+        "rate": "0,18 €/min",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "Strefa D",
+        "countries": "Reszta świata",
+        "rate": "0,28 €/min",
+        "color": "#F97316"
+      }
+    ],
+    "credits": [
+      {
+        "amount": "€5",
+        "label": "Starter",
+        "desc": "~30 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€15",
+        "label": "Standard",
+        "desc": "~100 min Zone A",
+        "popular": true
+      },
+      {
+        "amount": "€30",
+        "label": "Comfort",
+        "desc": "~200 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€50",
+        "label": "Power",
+        "desc": "~330 min Zone A",
+        "popular": false
+      }
+    ]
   },
   "privacy": {
     "title": "Twoje dane należą do Ciebie",
@@ -156,5 +221,12 @@
   },
   "darkMode": {
     "toggle": "Przełącz tryb ciemny"
+  },
+  "configurator": {
+    "title": "Twój konfigurator języków",
+    "subtitle": "Wybierz swój język i odkryj, dokąd możesz tłumaczyć",
+    "speaksLabel": "Mówię po",
+    "selectTarget": "Wybierz język docelowy",
+    "translatesTo": "Tłumaczy na"
   }
 }

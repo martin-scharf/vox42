@@ -10,7 +10,11 @@
     "headline": "Phone calls without language barriers",
     "subheadline": "Vox42 translates your phone calls in real time — you hear everything in your language, your contact in theirs.",
     "ctaAppStore": "Download on App Store",
-    "ctaGooglePlay": "Get it on Google Play"
+    "ctaGooglePlay": "Get it on Google Play",
+    "badge1": "No subscription",
+    "badge2": "Live transcription",
+    "ctaPrimary": "Try for free",
+    "ctaSecondary": "How it works"
   },
   "howItWorks": {
     "title": "Simple as 1-2-3",
@@ -34,8 +38,11 @@
     ]
   },
   "languages": {
-    "title": "12 languages, one app",
-    "subtitle": "From German to Chinese — Vox42 bridges the world's most common language barriers."
+    "title": "13 target languages. 70+ source languages.",
+    "subtitle": "The system automatically detects which language you speak — from over 70 possible ones. You get the translation into one of 13 target languages.",
+    "outputTitle": "Target languages (audio + transcript)",
+    "inputTitle": "Recognized source languages",
+    "inputCount": "70+ languages auto-detected"
   },
   "useCases": {
     "title": "For every situation",
@@ -78,7 +85,65 @@
         "desc": "For heavy callers and business travelers. Over 330 minutes."
       }
     ],
-    "note": "Credit never expires. Apple Pay, credit card, and Stripe accepted."
+    "note": "Credit never expires. Apple Pay, credit card, and Stripe accepted.",
+    "zonesTitle": "Transparent zone pricing",
+    "fromLabel": "from",
+    "noSub": "No subscription",
+    "noContract": "No contract",
+    "creditsTitle": "Credit packages",
+    "creditNeverExpires": "Credits never expire",
+    "zones": [
+      {
+        "label": "Zone A",
+        "countries": "DE, AT, CH, LU, LI",
+        "rate": "€0.08/min",
+        "color": "#00D4FF"
+      },
+      {
+        "label": "Zone B",
+        "countries": "EU countries",
+        "rate": "€0.12/min",
+        "color": "#4ADE80"
+      },
+      {
+        "label": "Zone C",
+        "countries": "US, CA, AU, JP, KR, SG...",
+        "rate": "€0.18/min",
+        "color": "#F59E0B"
+      },
+      {
+        "label": "Zone D",
+        "countries": "Rest of world",
+        "rate": "€0.28/min",
+        "color": "#F97316"
+      }
+    ],
+    "credits": [
+      {
+        "amount": "€5",
+        "label": "Starter",
+        "desc": "~30 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€15",
+        "label": "Standard",
+        "desc": "~100 min Zone A",
+        "popular": true
+      },
+      {
+        "amount": "€30",
+        "label": "Comfort",
+        "desc": "~200 min Zone A",
+        "popular": false
+      },
+      {
+        "amount": "€50",
+        "label": "Power",
+        "desc": "~330 min Zone A",
+        "popular": false
+      }
+    ]
   },
   "privacy": {
     "title": "Your data belongs to you",
@@ -156,5 +221,12 @@
   },
   "darkMode": {
     "toggle": "Toggle dark mode"
+  },
+  "configurator": {
+    "title": "Your Language Configurator",
+    "subtitle": "Choose your language and discover where you can translate to",
+    "speaksLabel": "I speak",
+    "selectTarget": "Choose target language",
+    "translatesTo": "Translates to"
   }
 }

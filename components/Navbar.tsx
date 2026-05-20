@@ -2,58 +2,118 @@
 
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
-import DarkModeToggle from './DarkModeToggle';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const t = useTranslations('nav');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-bgLight/80 dark:bg-bgDark/80 border-b border-gray-200/50 dark:border-gray-800/50">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        background: scrolled
+          ? 'rgba(5, 8, 16, 0.92)'
+          : 'transparent',
+        backdropFilter: scrolled ? 'blur(24px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(24px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
+      }}
+    >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 shrink-0">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 8 L16 24 L28 8" stroke="#5B21B6" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-            <circle cx="16" cy="8" r="3" fill="#5B21B6"/>
-            <path d="M10 6 Q8 8 10 10" stroke="#F97316" strokeWidth="2" strokeLinecap="round" fill="none"/>
-            <path d="M22 6 Q24 8 22 10" stroke="#F97316" strokeWidth="2" strokeLinecap="round" fill="none"/>
-          </svg>
-          <span className="font-bold text-xl text-primary tracking-tight">Vox42</span>
+        <a href="#" className="flex items-center gap-2.5 shrink-0 group">
+          <div className="relative">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" strokeWidth="1"/>
+              <path d="M10 12 L16 20 L22 12" stroke="#00D4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <circle cx="10" cy="12" r="2.5" fill="#00D4FF"/>
+              <circle cx="22" cy="12" r="2.5" fill="#F59E0B"/>
+              <circle cx="16" cy="20" r="2.5" fill="#00D4FF" opacity="0.6"/>
+            </svg>
+          </div>
+          <span
+            className="font-display font-bold text-xl tracking-tight text-white group-hover:text-cyan transition-colors duration-200"
+            style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)', color: 'white' }}
+          >
+            Vox<span style={{ color: '#00D4FF' }}>42</span>
+          </span>
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">
-          <li><a href="#how-it-works" className="hover:text-primary dark:hover:text-primary transition-colors">{t('howItWorks')}</a></li>
-          <li><a href="#languages" className="hover:text-primary dark:hover:text-primary transition-colors">{t('languages')}</a></li>
-          <li><a href="#pricing" className="hover:text-primary dark:hover:text-primary transition-colors">{t('pricing')}</a></li>
-          <li><a href="#security" className="hover:text-primary dark:hover:text-primary transition-colors">{t('security')}</a></li>
-          <li><a href="#faq" className="hover:text-primary dark:hover:text-primary transition-colors">{t('faq')}</a></li>
+        <ul className="hidden md:flex items-center gap-7 text-sm font-medium" style={{ color: '#94A3B8' }}>
+          {[
+            ['#how-it-works', t('howItWorks')],
+            ['#languages',    t('languages')],
+            ['#pricing',      t('pricing')],
+            ['#security',     t('security')],
+            ['#faq',          t('faq')],
+          ].map(([href, label]) => (
+            <li key={href}>
+              <a
+                href={href}
+                className="hover:text-white transition-colors duration-150 relative group"
+              >
+                {label}
+                <span
+                  className="absolute -bottom-0.5 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                  style={{ background: '#00D4FF' }}
+                />
+              </a>
+            </li>
+          ))}
         </ul>
 
         {/* Controls */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <DarkModeToggle />
+
+          {/* CTA */}
+          <a
+            href="#"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200"
+            style={{
+              background: '#F59E0B',
+              color: '#000',
+              fontFamily: 'var(--font-syne, Syne, sans-serif)',
+              minHeight: '38px',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLElement).style.background = '#fbbf24';
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 20px rgba(245,158,11,0.4)';
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLElement).style.background = '#F59E0B';
+              (e.currentTarget as HTMLElement).style.boxShadow = '';
+            }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            App laden
+          </a>
+
           {/* Mobile hamburger */}
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-150"
+            style={{ color: '#94A3B8' }}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
+            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)')}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = '')}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600 dark:text-gray-300">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               {menuOpen ? (
-                <>
-                  <line x1="18" y1="6" x2="6" y2="18"/>
-                  <line x1="6" y1="6" x2="18" y2="18"/>
-                </>
+                <><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></>
               ) : (
-                <>
-                  <line x1="3" y1="6" x2="21" y2="6"/>
-                  <line x1="3" y1="12" x2="21" y2="12"/>
-                  <line x1="3" y1="18" x2="21" y2="18"/>
-                </>
+                <><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></>
               )}
             </svg>
           </button>
@@ -62,14 +122,49 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-bgDark border-t border-gray-200 dark:border-gray-800 px-4 py-4">
-          <ul className="flex flex-col gap-4 text-sm font-medium text-gray-600 dark:text-gray-400">
-            <li><a href="#how-it-works" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-primary transition-colors">{t('howItWorks')}</a></li>
-            <li><a href="#languages" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-primary transition-colors">{t('languages')}</a></li>
-            <li><a href="#pricing" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-primary transition-colors">{t('pricing')}</a></li>
-            <li><a href="#security" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-primary transition-colors">{t('security')}</a></li>
-            <li><a href="#faq" onClick={() => setMenuOpen(false)} className="block py-2 hover:text-primary transition-colors">{t('faq')}</a></li>
+        <div
+          className="md:hidden px-4 py-5 animate-slide-down"
+          style={{
+            background: 'rgba(5, 8, 16, 0.97)',
+            backdropFilter: 'blur(24px)',
+            borderTop: '1px solid rgba(255,255,255,0.07)',
+          }}
+        >
+          <ul className="flex flex-col gap-1">
+            {[
+              ['#how-it-works', t('howItWorks')],
+              ['#languages',    t('languages')],
+              ['#pricing',      t('pricing')],
+              ['#security',     t('security')],
+              ['#faq',          t('faq')],
+            ].map(([href, label]) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-3 px-2 rounded-lg text-sm font-medium transition-colors duration-150"
+                  style={{ color: '#94A3B8' }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.color = '#00D4FF';
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(0,212,255,0.05)';
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.color = '#94A3B8';
+                    (e.currentTarget as HTMLElement).style.background = '';
+                  }}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
+          <a
+            href="#"
+            className="mt-4 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold"
+            style={{ background: '#F59E0B', color: '#000', fontFamily: 'var(--font-syne, Syne)' }}
+          >
+            App laden
+          </a>
         </div>
       )}
     </header>
