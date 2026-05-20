@@ -20,20 +20,24 @@
     "title": "Simple comme bonjour",
     "steps": [
       {
-        "title": "Ouvrir l'app",
-        "desc": "Lancez Vox42 sur votre téléphone et sélectionnez votre langue."
+        "title": "Ouvrir l'appli",
+        "desc": "Lance Vox42 et choisis ta langue."
+      },
+      {
+        "title": "Vérifier le numéro",
+        "desc": "Vérification unique du numéro — et tu reçois 1,5 minute gratuite pour tester. Appelle un ami !"
       },
       {
         "title": "Appeler",
-        "desc": "Appelez n'importe quel numéro dans le monde directement depuis l'application."
+        "desc": "Compose n'importe quel numéro mondial depuis l'appli."
       },
       {
         "title": "Parler",
-        "desc": "Parlez naturellement — Vox42 traduit en direct dans les deux sens."
+        "desc": "Parle normalement — Vox42 traduit en direct dans les deux sens."
       },
       {
         "title": "Lire la transcription",
-        "desc": "Après l'appel, un compte-rendu textuel supprimable est disponible."
+        "desc": "Après l'appel, une transcription supprimable est disponible."
       }
     ]
   },

@@ -21,19 +21,23 @@
     "steps": [
       {
         "title": "Uygulamayı aç",
-        "desc": "Vox42'yi telefonunuzda başlatın ve dilinizi seçin."
+        "desc": "Vox42'yi başlat ve dilini seç."
+      },
+      {
+        "title": "Numarayı doğrula",
+        "desc": "Tek seferlik numara doğrulaması — ve 1,5 dakika ücretsiz alırsın. Bir arkadaşını ara!"
       },
       {
         "title": "Ara",
-        "desc": "Uygulamadan doğrudan dünyanın herhangi bir numarasını arayın."
+        "desc": "Uygulamadan dünya genelinde herhangi bir numarayı ara."
       },
       {
         "title": "Konuş",
-        "desc": "Doğal konuşun — Vox42 her iki yönde de canlı olarak çevirir."
+        "desc": "Normal konuş — Vox42 her iki yönde canlı çeviri yapar."
       },
       {
-        "title": "Transkripti oku",
-        "desc": "Görüşmeden sonra silinebilir bir metin tutanağı kullanımınıza sunulur."
+        "title": "Transkripsiyonu oku",
+        "desc": "Görüşmeden sonra silinebilir bir metin dökümü mevcut."
       }
     ]
   },

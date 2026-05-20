@@ -21,19 +21,23 @@
     "steps": [
       {
         "title": "Otwórz aplikację",
-        "desc": "Uruchom Vox42 na swoim smartfonie i wybierz język."
+        "desc": "Uruchom Vox42 i wybierz swój język."
       },
       {
-        "title": "Zadzwoń",
-        "desc": "Zadzwoń na dowolny numer na świecie bezpośrednio z aplikacji."
+        "title": "Zweryfikuj numer",
+        "desc": "Jednorazowa weryfikacja numeru — i otrzymujesz 1,5 minuty za darmo. Zadzwoń do znajomego!"
+      },
+      {
+        "title": "Dzwoń",
+        "desc": "Wybierz dowolny numer na świecie z aplikacji."
       },
       {
         "title": "Mów",
-        "desc": "Mów normalnie — Vox42 tłumaczy na żywo w obie strony."
+        "desc": "Mów normalnie — Vox42 tłumaczy na żywo w obu kierunkach."
       },
       {
-        "title": "Czytaj transkrypt",
-        "desc": "Po rozmowie dostępny jest usuwalny protokół tekstowy."
+        "title": "Czytaj transkrypcję",
+        "desc": "Po rozmowie dostępna jest usuwalna transkrypcja."
       }
     ]
   },

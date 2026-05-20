@@ -20,20 +20,24 @@
     "title": "Zo simpel is het",
     "steps": [
       {
-        "title": "Open de app",
-        "desc": "Start Vox42 op uw smartphone en selecteer uw taal."
+        "title": "App openen",
+        "desc": "Start Vox42 en kies je taal."
+      },
+      {
+        "title": "Nummer verifiëren",
+        "desc": "Eenmalige nummerverificatie — en je krijgt 1,5 minuten gratis. Bel gewoon een vriend!"
       },
       {
         "title": "Bellen",
-        "desc": "Bel elk nummer ter wereld rechtstreeks vanuit de app."
+        "desc": "Bel elk nummer ter wereld vanuit de app."
       },
       {
-        "title": "Praten",
-        "desc": "Praat gewoon — Vox42 vertaalt live in beide richtingen."
+        "title": "Spreken",
+        "desc": "Spreek normaal — Vox42 vertaalt live in beide richtingen."
       },
       {
         "title": "Transcript lezen",
-        "desc": "Na het gesprek is er een verwijderbaar tekstverslag beschikbaar."
+        "desc": "Na het gesprek is een verwijderbaar tekstprotocol beschikbaar."
       }
     ]
   },

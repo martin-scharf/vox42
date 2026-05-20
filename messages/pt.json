@@ -20,20 +20,24 @@
     "title": "Simples assim",
     "steps": [
       {
-        "title": "Abrir a app",
-        "desc": "Inicie o Vox42 no seu telemóvel e selecione o seu idioma."
+        "title": "Abrir app",
+        "desc": "Abra o Vox42 e escolha seu idioma."
+      },
+      {
+        "title": "Verificar número",
+        "desc": "Verificação única do número — e você recebe 1,5 minutos grátis para testar. Ligue para um amigo!"
       },
       {
         "title": "Ligar",
-        "desc": "Ligue para qualquer número em todo o mundo diretamente a partir da app."
+        "desc": "Disque qualquer número mundial direto do app."
       },
       {
         "title": "Falar",
-        "desc": "Fale normalmente — o Vox42 traduz em direto em ambas as direções."
+        "desc": "Fale normalmente — Vox42 traduz ao vivo em ambas as direções."
       },
       {
-        "title": "Ler a transcrição",
-        "desc": "Após a chamada, fica disponível uma transcrição de texto eliminável."
+        "title": "Ler transcrição",
+        "desc": "Após a chamada, uma transcrição deletável fica disponível."
       }
     ]
   },

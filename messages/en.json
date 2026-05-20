@@ -20,20 +20,24 @@
     "title": "Simple as 1-2-3",
     "steps": [
       {
-        "title": "Open the app",
-        "desc": "Launch Vox42 on your phone and select your language."
+        "title": "Open app",
+        "desc": "Launch Vox42 and select your language."
       },
       {
-        "title": "Make the call",
-        "desc": "Call any number worldwide directly from the app."
+        "title": "Verify number",
+        "desc": "One-time phone number verification — and you get 1.5 minutes free to try it out. Just call a friend!"
       },
       {
-        "title": "Just talk",
-        "desc": "Speak naturally — Vox42 translates live in both directions."
+        "title": "Call",
+        "desc": "Dial any number worldwide directly from the app."
       },
       {
-        "title": "Read the transcript",
-        "desc": "After the call, a deletable text transcript is available to you."
+        "title": "Speak",
+        "desc": "Talk normally — Vox42 translates live in both directions."
+      },
+      {
+        "title": "Read transcript",
+        "desc": "After the call, a deletable text transcript is available."
       }
     ]
   },

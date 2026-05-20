@@ -21,19 +21,23 @@
     "steps": [
       {
         "title": "App öffnen",
-        "desc": "Starte Vox42 auf deinem Smartphone und wähle deine Sprache."
+        "desc": "Starte Vox42 und wähle deine Sprache."
+      },
+      {
+        "title": "Nummer verifizieren",
+        "desc": "Einmalige Handynummer-Bestätigung — und du erhältst 1,5 Minuten kostenlos zum Testen. Ruf einfach einen Freund an!"
       },
       {
         "title": "Anrufen",
-        "desc": "Ruf jede beliebige Nummer weltweit direkt aus der App an."
+        "desc": "Wähle eine Nummer weltweit direkt aus der App."
       },
       {
         "title": "Sprechen",
-        "desc": "Sprich ganz normal — Vox42 übersetzt live in beide Richtungen."
+        "desc": "Sprich normal — Vox42 übersetzt live in beide Richtungen."
       },
       {
         "title": "Transkript lesen",
-        "desc": "Nach dem Gespräch steht dir ein löschbares Textprotokoll zur Verfügung."
+        "desc": "Nach dem Gespräch steht ein löschbares Textprotokoll bereit."
       }
     ]
   },

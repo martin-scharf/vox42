@@ -21,19 +21,23 @@
     "steps": [
       {
         "title": "Apri l'app",
-        "desc": "Avvia Vox42 sul tuo smartphone e seleziona la tua lingua."
+        "desc": "Avvia Vox42 e scegli la tua lingua."
+      },
+      {
+        "title": "Verifica numero",
+        "desc": "Verifica unica del numero — ricevi 1,5 minuti gratuiti per provare. Chiama un amico!"
       },
       {
         "title": "Chiama",
-        "desc": "Chiama qualsiasi numero nel mondo direttamente dall'app."
+        "desc": "Componi qualsiasi numero nel mondo dall'app."
       },
       {
         "title": "Parla",
         "desc": "Parla normalmente — Vox42 traduce in diretta in entrambe le direzioni."
       },
       {
-        "title": "Leggi la trascrizione",
-        "desc": "Dopo la chiamata, è disponibile un resoconto testuale eliminabile."
+        "title": "Leggi trascrizione",
+        "desc": "Dopo la chiamata è disponibile una trascrizione eliminabile."
       }
     ]
   },
