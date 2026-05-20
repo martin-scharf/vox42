@@ -196,52 +196,46 @@ function getZone(cc: string) {
 export default function LanguageConfigurator() {
   const t = useTranslations('configurator');
   const [activeLangs, setActiveLangs] = useState<Set<string>>(new Set<string>());
+  const [showOverlay, setShowOverlay] = useState(false); // orange world overlay
   const [clickedInfo, setClickedInfo] = useState<string | null>(null);
   const [userInteracted, setUserInteracted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const allCodes = LANGUAGES.map(l => l.code);
 
-  // Auto-animation: random language selection until user clicks
+  // Auto-animation: pick 1 lang → pick 2nd → show orange overlay → pause → clear → repeat
   const runAnimation = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
-
     const steps: Array<() => void> = [];
-    const delay = (ms: number, fn: () => void) => steps.push(() => { timerRef.current = setTimeout(() => { fn(); runNext(); }, ms); });
+    const delay = (ms: number, fn: () => void) =>
+      steps.push(() => { timerRef.current = setTimeout(() => { fn(); runNext(); }, ms); });
     let stepIdx = 0;
     const runNext = () => { if (stepIdx < steps.length) steps[stepIdx++](); };
 
-    // Build a random sequence
     const shuffled = [...allCodes].sort(() => Math.random() - 0.5);
-    const pick1 = shuffled[0];
-    const pick2 = shuffled[1];
-    const pick3 = shuffled[2];
-    const pick4 = shuffled[3];
+    const [p1, p2] = shuffled;
 
-    delay(0,    () => setActiveLangs(new Set([pick1])));
-    delay(700,  () => setActiveLangs(new Set([pick1, pick2])));
-    delay(800,  () => setActiveLangs(new Set([pick1, pick2, pick3])));
-    delay(900,  () => setActiveLangs(new Set<string>()));
-    delay(500,  () => setActiveLangs(new Set([pick4])));
-    delay(700,  () => setActiveLangs(new Set([pick4, pick3])));
-    delay(1200, () => setActiveLangs(new Set<string>()));
-    delay(400,  () => runAnimation()); // loop
+    delay(0,    () => { setShowOverlay(false); setActiveLangs(new Set([p1])); });
+    delay(1400, () => setActiveLangs(new Set([p1, p2])));
+    delay(1200, () => setShowOverlay(true));   // WOW: orange overlay erscheint
+    delay(2200, () => setShowOverlay(false));  // overlay wieder weg
+    delay(600,  () => setActiveLangs(new Set<string>())); // alles löschen
+    delay(800,  () => runAnimation());         // loop
 
     runNext();
   }, []); // eslint-disable-line
 
   useEffect(() => {
     if (!userInteracted) {
-      timerRef.current = setTimeout(runAnimation, 600);
+      timerRef.current = setTimeout(runAnimation, 800);
     }
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [userInteracted, runAnimation]);
 
   const toggleLang = (code: string) => {
-    // Stop animation on first user click
     if (!userInteracted) {
       setUserInteracted(true);
+      setShowOverlay(false);
       if (timerRef.current) clearTimeout(timerRef.current);
-      // Start fresh: all active
       setActiveLangs(new Set(allCodes));
       return;
     }
@@ -303,11 +297,6 @@ export default function LanguageConfigurator() {
           ))}
         </div>
 
-        {/* Status line */}
-        <p style={{ textAlign: 'center', color: '#475569', fontSize: '0.72rem', marginBottom: '24px' }}>
-          {activeLangs.size} / {LANGUAGES.length} Sprachen aktiv · {activeHomeCountries.size} Heimatländer auf Karte 1
-        </p>
-
         {/* Clicked info */}
         {clickedInfo && (
           <div style={{ background: 'rgba(0,212,255,0.06)', border: '1px solid rgba(0,212,255,0.2)', borderRadius: '12px', padding: '12px 16px', marginBottom: '16px', textAlign: 'center', color: '#00D4FF', fontSize: '0.85rem' }}>
@@ -315,53 +304,69 @@ export default function LanguageConfigurator() {
           </div>
         )}
 
-        {/* Map 1 */}
-        <div style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '18px', padding: '18px', marginBottom: '12px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#00D4FF', boxShadow: '0 0 8px #00D4FF', flexShrink: 0 }} />
-            <div>
-              <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#fff' }}>Wenn du hier wohnst…</h3>
-              <p style={{ fontSize: '0.7rem', color: '#64748B', marginTop: '2px' }}>Heimatländer deiner aktiven Sprachen (cyan) · Sprache anklicken zum Deaktivieren</p>
+        {/* ── SINGLE MAP CARD WITH OVERLAY ── */}
+        <div style={{ background: 'rgba(255,255,255,0.025)', border: `1px solid ${showOverlay ? 'rgba(245,158,11,0.35)' : 'rgba(255,255,255,0.08)'}`, borderRadius: '18px', padding: '18px', transition: 'border-color 0.6s ease', boxShadow: showOverlay ? '0 0 40px rgba(245,158,11,0.12)' : 'none' }}>
+
+          {/* Label row — left cyan / right orange fades in */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', minHeight: '40px' }}>
+            {/* Left */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#00D4FF', boxShadow: '0 0 8px #00D4FF', flexShrink: 0 }} />
+              <div>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#fff' }}>Wenn du hier wohnst…</h3>
+                <p style={{ fontSize: '0.7rem', color: '#64748B', marginTop: '1px' }}>
+                  {userInteracted ? 'Sprache klicken zum Deaktivieren' : 'Karte zeigt deine Heimatländer'}
+                </p>
+              </div>
+            </div>
+            {/* Right — orange label fades in with overlay */}
+            <div style={{
+              display: 'flex', alignItems: 'center', gap: '10px',
+              opacity: showOverlay ? 1 : 0,
+              transform: showOverlay ? 'translateX(0)' : 'translateX(20px)',
+              transition: 'opacity 0.5s ease, transform 0.5s ease',
+              pointerEvents: 'none',
+            }}>
+              <div>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#F59E0B', textAlign: 'right' }}>…kannst du überall hier anrufen</h3>
+                <p style={{ fontSize: '0.7rem', color: '#92400E', marginTop: '1px', textAlign: 'right' }}>130+ Länder · Hover für Sprache & Preis</p>
+              </div>
+              <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F59E0B', boxShadow: '0 0 8px #F59E0B', flexShrink: 0 }} />
             </div>
           </div>
-          <WorldMapD3
-            activeCountries={activeHomeCountries}
-            mapType="source"
-            allTargetCodes={ALL_TARGET_CODES}
-            countryData={COUNTRY_DATA}
-            getZone={getZone}
-            onCountryClick={handleCountryClick}
-          />
-          <p style={{ textAlign: 'center', color: '#334155', fontSize: '0.67rem', marginTop: '6px' }}>Hover = Landesname + Sprache · Klicken für Details</p>
-        </div>
 
-        {/* Arrow */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '4px 0' }}>
-          <div style={{ flex: 1, height: 2, background: 'linear-gradient(90deg, rgba(0,212,255,0.25), rgba(245,158,11,0.25))' }} />
-          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '6px 16px', fontSize: '0.74rem', color: '#94A3B8', whiteSpace: 'nowrap' }}>
-            mit <span style={{ color: '#00D4FF', fontWeight: 700 }}>Vox42</span> kannst du live übersetzen ↓
-          </div>
-          <div style={{ flex: 1, height: 2, background: 'linear-gradient(90deg, rgba(245,158,11,0.25), rgba(0,212,255,0.25))' }} />
-        </div>
-
-        {/* Map 2 */}
-        <div style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '18px', padding: '18px', marginTop: '12px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F59E0B', boxShadow: '0 0 8px #F59E0B', flexShrink: 0 }} />
-            <div>
-              <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#fff' }}>…kannst du überall hierhin anrufen</h3>
-              <p style={{ fontSize: '0.7rem', color: '#64748B', marginTop: '2px' }}>Alle 130+ Länder — hover für Landesname + Sprache + Minutenpreis</p>
+          {/* Map container — source + target overlaid */}
+          <div style={{ position: 'relative' }}>
+            {/* Layer 1: source map (always visible) */}
+            <WorldMapD3
+              activeCountries={activeHomeCountries}
+              mapType="source"
+              allTargetCodes={ALL_TARGET_CODES}
+              countryData={COUNTRY_DATA}
+              getZone={getZone}
+              onCountryClick={handleCountryClick}
+            />
+            {/* Layer 2: target overlay (fades in) */}
+            <div style={{
+              position: 'absolute', inset: 0, borderRadius: '8px',
+              opacity: showOverlay ? 1 : 0,
+              transition: 'opacity 0.7s ease',
+              pointerEvents: showOverlay ? 'auto' : 'none',
+            }}>
+              <WorldMapD3
+                activeCountries={new Set<string>()}
+                mapType="target"
+                allTargetCodes={ALL_TARGET_CODES}
+                countryData={COUNTRY_DATA}
+                getZone={getZone}
+                onCountryClick={handleCountryClick}
+              />
             </div>
           </div>
-          <WorldMapD3
-            activeCountries={new Set<string>()}
-            mapType="target"
-            allTargetCodes={ALL_TARGET_CODES}
-            countryData={COUNTRY_DATA}
-            getZone={getZone}
-            onCountryClick={handleCountryClick}
-          />
-          <p style={{ textAlign: 'center', color: '#334155', fontSize: '0.67rem', marginTop: '6px' }}>Hover → Landesname + Sprache erscheint · Klicken → Zone & Preis</p>
+
+          <p style={{ textAlign: 'center', color: '#334155', fontSize: '0.67rem', marginTop: '6px' }}>
+            {showOverlay ? '🌍 Amber = alle Länder die du anrufen kannst · Hover für Details' : 'Hover = Landesname + Sprache · Klicken für Details'}
+          </p>
         </div>
 
         {/* Reach bar */}
