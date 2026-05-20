@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "howItWorks": "Come funziona",
+    "languages": "Lingue",
+    "pricing": "Prezzi",
+    "security": "Sicurezza",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "headline": "Telefonate senza barriere linguistiche",
+    "subheadline": "Vox42 traduce le tue chiamate in tempo reale — senti tutto nella tua lingua, il tuo interlocutore nella sua.",
+    "ctaAppStore": "Scarica su App Store",
+    "ctaGooglePlay": "Disponibile su Google Play"
+  },
+  "howItWorks": {
+    "title": "Semplicissimo",
+    "steps": [
+      {
+        "title": "Apri l'app",
+        "desc": "Avvia Vox42 sul tuo smartphone e seleziona la tua lingua."
+      },
+      {
+        "title": "Chiama",
+        "desc": "Chiama qualsiasi numero nel mondo direttamente dall'app."
+      },
+      {
+        "title": "Parla",
+        "desc": "Parla normalmente — Vox42 traduce in diretta in entrambe le direzioni."
+      },
+      {
+        "title": "Leggi la trascrizione",
+        "desc": "Dopo la chiamata, è disponibile un resoconto testuale eliminabile."
+      }
+    ]
+  },
+  "languages": {
+    "title": "12 lingue, un'app",
+    "subtitle": "Dal tedesco al cinese — Vox42 supera le barriere linguistiche più comuni del mondo."
+  },
+  "useCases": {
+    "title": "Per ogni situazione",
+    "cases": [
+      {
+        "icon": "hotel",
+        "title": "Prenotare un hotel",
+        "desc": "Chiama direttamente l'hotel all'estero e chiarisci tutti i dettagli senza malintesi."
+      },
+      {
+        "icon": "family",
+        "title": "Chiamare la famiglia",
+        "desc": "Resta in contatto con la tua famiglia indipendentemente dalla loro lingua."
+      },
+      {
+        "icon": "business",
+        "title": "Partner commerciali",
+        "desc": "Conduci conversazioni professionali con partner internazionali alla pari."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Modello prepagato semplice",
+    "subtitle": "Nessun abbonamento, nessuna sorpresa. Ricarica e vai.",
+    "packages": [
+      {
+        "amount": "5€",
+        "label": "Starter",
+        "desc": "Perfetto per provare. Circa 30 minuti di chiamate tradotte."
+      },
+      {
+        "amount": "15€",
+        "label": "Standard",
+        "desc": "Il nostro pacchetto più popolare. Circa 100 minuti per il quotidiano.",
+        "popular": true
+      },
+      {
+        "amount": "50€",
+        "label": "Power",
+        "desc": "Per chi telefona molto e i viaggiatori d'affari. Oltre 330 minuti."
+      }
+    ],
+    "note": "Il credito non scade mai. Accettiamo Apple Pay, carta di credito e Stripe."
+  },
+  "privacy": {
+    "title": "I tuoi dati sono tuoi",
+    "points": [
+      {
+        "title": "Nessun audio memorizzato",
+        "desc": "I dati audio vengono elaborati esclusivamente per la traduzione in tempo reale e non vengono mai memorizzati."
+      },
+      {
+        "title": "Trascrizione eliminabile",
+        "desc": "Puoi eliminare il resoconto testuale della tua conversazione in qualsiasi momento nell'app."
+      },
+      {
+        "title": "Server UE",
+        "desc": "Tutti i dati vengono elaborati esclusivamente su server dell'Unione Europea."
+      }
+    ],
+    "link": "Leggi l'informativa sulla privacy"
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "items": [
+      {
+        "q": "Quanto è accurata la traduzione?",
+        "a": "Vox42 utilizza la traduzione AI all'avanguardia con oltre il 95% di precisione per le lingue supportate."
+      },
+      {
+        "q": "Funziona senza Wi-Fi?",
+        "a": "Sì, con una connessione dati mobile stabile (4G/LTE o superiore), la traduzione funziona altrettanto bene del Wi-Fi."
+      },
+      {
+        "q": "Come viene protetta la mia chiamata?",
+        "a": "La trasmissione è cifrata end-to-end. I dati audio non vengono memorizzati in modo permanente."
+      },
+      {
+        "q": "Posso usare Vox42 in emergenza?",
+        "a": "Vox42 è progettato per la comunicazione quotidiana. Per le emergenze mediche consigliamo sempre un interprete professionista."
+      },
+      {
+        "q": "Quanto costa al minuto?",
+        "a": "I costi variano a seconda della destinazione. Con il pacchetto Starter (5€) hai circa 30 minuti, con Standard (15€) circa 100 minuti."
+      },
+      {
+        "q": "Il mio credito scade?",
+        "a": "No. Il credito ricaricato non scade mai e rimane valido finché il tuo account è attivo."
+      },
+      {
+        "q": "Quali lingue sono supportate?",
+        "a": "Vox42 supporta attualmente tedesco, inglese, francese, italiano, spagnolo, portoghese, polacco, turco, olandese, russo, ucraino e cinese."
+      },
+      {
+        "q": "Come ricaricare il credito?",
+        "a": "Puoi ricaricare il credito direttamente nell'app tramite Apple Pay, Google Pay, carta di credito o Stripe."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "Pronto a chiamare il mondo?",
+    "ctaAppStore": "Scarica su App Store",
+    "ctaGooglePlay": "Disponibile su Google Play"
+  },
+  "footer": {
+    "impressum": "Note legali",
+    "datenschutz": "Privacy",
+    "agb": "Termini",
+    "kontakt": "Contatti",
+    "support": "Supporto",
+    "copyright": "© 2025 Vox42. Tutti i diritti riservati.",
+    "faq": "FAQ"
+  },
+  "cookie": {
+    "text": "Utilizziamo i cookie per migliorare la tua esperienza. Usando questo sito accetti la nostra informativa sulla privacy.",
+    "accept": "Accetta",
+    "decline": "Rifiuta"
+  },
+  "darkMode": {
+    "toggle": "Modalità scura"
+  }
+}

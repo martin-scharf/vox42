@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "howItWorks": "Comment ça marche",
+    "languages": "Langues",
+    "pricing": "Tarifs",
+    "security": "Sécurité",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "headline": "Téléphonez sans barrières linguistiques",
+    "subheadline": "Vox42 traduit vos appels téléphoniques en temps réel — vous entendez tout dans votre langue, votre interlocuteur dans la sienne.",
+    "ctaAppStore": "Télécharger sur App Store",
+    "ctaGooglePlay": "Disponible sur Google Play"
+  },
+  "howItWorks": {
+    "title": "Simple comme bonjour",
+    "steps": [
+      {
+        "title": "Ouvrir l'app",
+        "desc": "Lancez Vox42 sur votre téléphone et sélectionnez votre langue."
+      },
+      {
+        "title": "Appeler",
+        "desc": "Appelez n'importe quel numéro dans le monde directement depuis l'application."
+      },
+      {
+        "title": "Parler",
+        "desc": "Parlez naturellement — Vox42 traduit en direct dans les deux sens."
+      },
+      {
+        "title": "Lire la transcription",
+        "desc": "Après l'appel, un compte-rendu textuel supprimable est disponible."
+      }
+    ]
+  },
+  "languages": {
+    "title": "12 langues, une application",
+    "subtitle": "De l'allemand au chinois — Vox42 surmonte les barrières linguistiques les plus fréquentes du monde."
+  },
+  "useCases": {
+    "title": "Pour chaque situation",
+    "cases": [
+      {
+        "icon": "hotel",
+        "title": "Réserver un hôtel",
+        "desc": "Appelez l'hôtel à l'étranger directement et clarifiez tous les détails sans malentendu."
+      },
+      {
+        "icon": "family",
+        "title": "Appeler la famille",
+        "desc": "Restez en contact avec votre famille quelle que soit leur langue."
+      },
+      {
+        "icon": "business",
+        "title": "Partenaires commerciaux",
+        "desc": "Menez des conversations professionnelles avec des partenaires internationaux d'égal à égal."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Modèle prépayé simple",
+    "subtitle": "Pas d'abonnement, pas de surprises. Rechargez et partez.",
+    "packages": [
+      {
+        "amount": "5€",
+        "label": "Starter",
+        "desc": "Parfait pour essayer. Environ 30 minutes d'appels traduits."
+      },
+      {
+        "amount": "15€",
+        "label": "Standard",
+        "desc": "Notre forfait le plus populaire. Environ 100 minutes pour le quotidien.",
+        "popular": true
+      },
+      {
+        "amount": "50€",
+        "label": "Power",
+        "desc": "Pour les gros utilisateurs et voyageurs d'affaires. Plus de 330 minutes."
+      }
+    ],
+    "note": "Le crédit n'expire jamais. Apple Pay, carte bancaire et Stripe acceptés."
+  },
+  "privacy": {
+    "title": "Vos données vous appartiennent",
+    "points": [
+      {
+        "title": "Aucun audio stocké",
+        "desc": "Les données audio sont traitées uniquement pour la traduction en temps réel et ne sont jamais stockées."
+      },
+      {
+        "title": "Transcription supprimable",
+        "desc": "Vous pouvez supprimer la transcription de votre conversation à tout moment dans l'application."
+      },
+      {
+        "title": "Serveurs UE",
+        "desc": "Toutes les données sont traitées exclusivement sur des serveurs de l'Union européenne."
+      }
+    ],
+    "link": "Lire la politique de confidentialité"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "q": "Quelle est la précision de la traduction?",
+        "a": "Vox42 utilise une traduction IA de pointe avec plus de 95% de précision pour les langues prises en charge."
+      },
+      {
+        "q": "Fonctionne-t-il sans Wi-Fi?",
+        "a": "Oui, avec une connexion de données mobile stable (4G/LTE ou mieux), la traduction fonctionne aussi bien qu'en Wi-Fi."
+      },
+      {
+        "q": "Comment mon appel est-il protégé?",
+        "a": "La transmission est chiffrée de bout en bout. Les données audio ne sont pas stockées de façon permanente."
+      },
+      {
+        "q": "Puis-je utiliser Vox42 en urgence?",
+        "a": "Vox42 est conçu pour la communication quotidienne. Pour les urgences médicales, nous recommandons toujours un interprète professionnel."
+      },
+      {
+        "q": "Quel est le coût par minute?",
+        "a": "Les coûts varient selon la destination. Avec le pack Starter (5€) vous avez environ 30 minutes, Standard (15€) environ 100 minutes."
+      },
+      {
+        "q": "Mon crédit expire-t-il?",
+        "a": "Non. Le crédit rechargé n'expire jamais et reste valide tant que votre compte est actif."
+      },
+      {
+        "q": "Quelles langues sont prises en charge?",
+        "a": "Vox42 prend actuellement en charge l'allemand, l'anglais, le français, l'italien, l'espagnol, le portugais, le polonais, le turc, le néerlandais, le russe, l'ukrainien et le chinois."
+      },
+      {
+        "q": "Comment recharger du crédit?",
+        "a": "Vous pouvez recharger du crédit directement dans l'application via Apple Pay, Google Pay, carte bancaire ou Stripe."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "Prêt à appeler le monde?",
+    "ctaAppStore": "Télécharger sur App Store",
+    "ctaGooglePlay": "Disponible sur Google Play"
+  },
+  "footer": {
+    "impressum": "Mentions légales",
+    "datenschutz": "Confidentialité",
+    "agb": "CGU",
+    "kontakt": "Contact",
+    "support": "Support",
+    "copyright": "© 2025 Vox42. Tous droits réservés.",
+    "faq": "FAQ"
+  },
+  "cookie": {
+    "text": "Nous utilisons des cookies pour améliorer votre expérience. En utilisant ce site, vous acceptez notre politique de confidentialité.",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+  "darkMode": {
+    "toggle": "Basculer le mode sombre"
+  }
+}

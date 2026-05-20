@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "howItWorks": "Nasıl çalışır",
+    "languages": "Diller",
+    "pricing": "Fiyatlar",
+    "security": "Güvenlik",
+    "faq": "SSS"
+  },
+  "hero": {
+    "headline": "Dil engeli olmadan telefon görüşmeleri",
+    "subheadline": "Vox42, telefon görüşmelerinizi gerçek zamanlı olarak çevirir — siz her şeyi kendi dilinizde duyarsınız, karşınızdaki kişi kendi dilinde.",
+    "ctaAppStore": "App Store'dan İndir",
+    "ctaGooglePlay": "Google Play'den Al"
+  },
+  "howItWorks": {
+    "title": "Bu kadar basit",
+    "steps": [
+      {
+        "title": "Uygulamayı aç",
+        "desc": "Vox42'yi telefonunuzda başlatın ve dilinizi seçin."
+      },
+      {
+        "title": "Ara",
+        "desc": "Uygulamadan doğrudan dünyanın herhangi bir numarasını arayın."
+      },
+      {
+        "title": "Konuş",
+        "desc": "Doğal konuşun — Vox42 her iki yönde de canlı olarak çevirir."
+      },
+      {
+        "title": "Transkripti oku",
+        "desc": "Görüşmeden sonra silinebilir bir metin tutanağı kullanımınıza sunulur."
+      }
+    ]
+  },
+  "languages": {
+    "title": "12 dil, bir uygulama",
+    "subtitle": "Almancadan Çinceye — Vox42, dünyanın en yaygın dil engellerini aşar."
+  },
+  "useCases": {
+    "title": "Her durum için",
+    "cases": [
+      {
+        "icon": "hotel",
+        "title": "Otel rezervasyonu",
+        "desc": "Yurt dışındaki oteli doğrudan arayın ve tüm ayrıntıları yanlış anlaşılma olmadan netleştirin."
+      },
+      {
+        "icon": "family",
+        "title": "Aileyi ara",
+        "desc": "Hangi dili konuştuklarına bakılmaksızın ailenizle iletişimde kalın."
+      },
+      {
+        "icon": "business",
+        "title": "İş ortakları",
+        "desc": "Uluslararası ortaklarla eşit düzeyde profesyonel görüşmeler yapın."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Basit ön ödemeli model",
+    "subtitle": "Abonelik yok, sürpriz yok. Kredi yükleyin ve başlayın.",
+    "packages": [
+      {
+        "amount": "5€",
+        "label": "Starter",
+        "desc": "Denemek için ideal. Yaklaşık 30 dakika çevrilmiş görüşme."
+      },
+      {
+        "amount": "15€",
+        "label": "Standard",
+        "desc": "En popüler paketimiz. Günlük kullanım için yaklaşık 100 dakika.",
+        "popular": true
+      },
+      {
+        "amount": "50€",
+        "label": "Power",
+        "desc": "Çok arayanlar ve iş seyahati yapanlar için. 330 dakikadan fazla."
+      }
+    ],
+    "note": "Kredi asla sona ermez. Apple Pay, kredi kartı ve Stripe kabul edilir."
+  },
+  "privacy": {
+    "title": "Verileriniz size aittir",
+    "points": [
+      {
+        "title": "Ses kaydedilmez",
+        "desc": "Ses verileri yalnızca gerçek zamanlı çeviri için işlenir ve hiçbir zaman saklanmaz."
+      },
+      {
+        "title": "Silinebilir transkript",
+        "desc": "Görüşme metni tutanağını uygulamadan istediğiniz zaman silebilirsiniz."
+      },
+      {
+        "title": "AB sunucuları",
+        "desc": "Tüm veriler yalnızca Avrupa Birliği'ndeki sunucularda işlenir."
+      }
+    ],
+    "link": "Gizlilik politikasını oku"
+  },
+  "faq": {
+    "title": "Sıkça sorulan sorular",
+    "items": [
+      {
+        "q": "Çeviri ne kadar doğru?",
+        "a": "Vox42, desteklenen diller için %95'in üzerinde doğrulukla son teknoloji yapay zeka çevirisi kullanır."
+      },
+      {
+        "q": "Wi-Fi olmadan çalışır mı?",
+        "a": "Evet, stabil bir mobil veri bağlantısıyla (4G/LTE veya daha iyi) çeviri Wi-Fi kadar iyi çalışır."
+      },
+      {
+        "q": "Görüşmem nasıl korunur?",
+        "a": "İletim uçtan uca şifrelidir. Ses verileri kalıcı olarak saklanmaz."
+      },
+      {
+        "q": "Acil durumlarda Vox42'yi kullanabilir miyim?",
+        "a": "Vox42 günlük iletişim için tasarlanmıştır. Tıbbi acil durumlar için her zaman profesyonel bir tercüman öneriyoruz."
+      },
+      {
+        "q": "Dakikası ne kadar?",
+        "a": "Maliyetler hedefe göre değişir. Starter paketi (5€) yaklaşık 30 dakika, Standard (15€) yaklaşık 100 dakika sunar."
+      },
+      {
+        "q": "Kredim sona erer mi?",
+        "a": "Hayır. Yüklenen kredi asla sona ermez ve hesabınız aktif olduğu sürece geçerli kalır."
+      },
+      {
+        "q": "Hangi diller destekleniyor?",
+        "a": "Vox42 şu anda Almanca, İngilizce, Fransızca, İtalyanca, İspanyolca, Portekizce, Lehçe, Türkçe, Hollandaca, Rusça, Ukraynaca ve Çinceyi desteklemektedir."
+      },
+      {
+        "q": "Kredi nasıl yüklenir?",
+        "a": "Uygulamadan doğrudan Apple Pay, Google Pay, kredi kartı veya Stripe aracılığıyla kredi yükleyebilirsiniz."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "Dünyayı aramaya hazır mısınız?",
+    "ctaAppStore": "App Store'dan İndir",
+    "ctaGooglePlay": "Google Play'den Al"
+  },
+  "footer": {
+    "impressum": "Yasal Bildirim",
+    "datenschutz": "Gizlilik",
+    "agb": "Şartlar",
+    "kontakt": "İletişim",
+    "support": "Destek",
+    "copyright": "© 2025 Vox42. Tüm hakları saklıdır.",
+    "faq": "SSS"
+  },
+  "cookie": {
+    "text": "Deneyiminizi geliştirmek için çerezler kullanıyoruz. Bu siteyi kullanarak gizlilik politikamızı kabul etmiş olursunuz.",
+    "accept": "Kabul Et",
+    "decline": "Reddet"
+  },
+  "darkMode": {
+    "toggle": "Karanlık modu aç/kapat"
+  }
+}

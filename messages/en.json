@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "howItWorks": "How it works",
+    "languages": "Languages",
+    "pricing": "Pricing",
+    "security": "Security",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "headline": "Phone calls without language barriers",
+    "subheadline": "Vox42 translates your phone calls in real time — you hear everything in your language, your contact in theirs.",
+    "ctaAppStore": "Download on App Store",
+    "ctaGooglePlay": "Get it on Google Play"
+  },
+  "howItWorks": {
+    "title": "Simple as 1-2-3",
+    "steps": [
+      {
+        "title": "Open the app",
+        "desc": "Launch Vox42 on your phone and select your language."
+      },
+      {
+        "title": "Make the call",
+        "desc": "Call any number worldwide directly from the app."
+      },
+      {
+        "title": "Just talk",
+        "desc": "Speak naturally — Vox42 translates live in both directions."
+      },
+      {
+        "title": "Read the transcript",
+        "desc": "After the call, a deletable text transcript is available to you."
+      }
+    ]
+  },
+  "languages": {
+    "title": "12 languages, one app",
+    "subtitle": "From German to Chinese — Vox42 bridges the world's most common language barriers."
+  },
+  "useCases": {
+    "title": "For every situation",
+    "cases": [
+      {
+        "icon": "hotel",
+        "title": "Book a hotel",
+        "desc": "Call the hotel abroad directly and clarify every detail — without misunderstandings."
+      },
+      {
+        "icon": "family",
+        "title": "Call family",
+        "desc": "Stay connected with your family no matter what language they speak."
+      },
+      {
+        "icon": "business",
+        "title": "Business partners",
+        "desc": "Hold professional conversations with international partners on equal footing."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Simple prepaid model",
+    "subtitle": "No subscription, no surprises. Top up and go.",
+    "packages": [
+      {
+        "amount": "5€",
+        "label": "Starter",
+        "desc": "Perfect to try it out. Around 30 minutes of translated calls."
+      },
+      {
+        "amount": "15€",
+        "label": "Standard",
+        "desc": "Our most popular package. About 100 minutes for everyday use.",
+        "popular": true
+      },
+      {
+        "amount": "50€",
+        "label": "Power",
+        "desc": "For heavy callers and business travelers. Over 330 minutes."
+      }
+    ],
+    "note": "Credit never expires. Apple Pay, credit card, and Stripe accepted."
+  },
+  "privacy": {
+    "title": "Your data belongs to you",
+    "points": [
+      {
+        "title": "No audio stored",
+        "desc": "Audio data is processed exclusively for real-time translation and is never stored."
+      },
+      {
+        "title": "Deletable transcript",
+        "desc": "You can delete the text transcript of your conversation at any time in the app."
+      },
+      {
+        "title": "EU servers",
+        "desc": "All data is processed exclusively on servers within the European Union."
+      }
+    ],
+    "link": "Read privacy policy"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "How accurate is the translation?",
+        "a": "Vox42 uses state-of-the-art AI translation with over 95% accuracy for supported languages. Quality depends on a clear audio input."
+      },
+      {
+        "q": "Does it work without Wi-Fi?",
+        "a": "Yes, over a stable mobile data connection (4G/LTE or better), translation works just as well as over Wi-Fi."
+      },
+      {
+        "q": "How is my call protected?",
+        "a": "Transmission is end-to-end encrypted. Audio data is not permanently stored. Only the optional transcript remains on our EU servers until you delete it."
+      },
+      {
+        "q": "Can I use Vox42 in emergencies?",
+        "a": "Vox42 is designed for everyday communication. For medical emergencies, we always recommend using a professional interpreter."
+      },
+      {
+        "q": "What does a call cost per minute?",
+        "a": "Costs vary by destination. With the Starter pack (€5) you get around 30 minutes, with Standard (€15) around 100 minutes."
+      },
+      {
+        "q": "Does my credit expire?",
+        "a": "No. Credit you've topped up never expires and remains valid as long as your account is active."
+      },
+      {
+        "q": "Which languages are supported?",
+        "a": "Vox42 currently supports German, English, French, Italian, Spanish, Portuguese, Polish, Turkish, Dutch, Russian, Ukrainian, and Chinese."
+      },
+      {
+        "q": "How do I top up credit?",
+        "a": "You can top up credit directly in the app via Apple Pay, Google Pay, credit card, or Stripe."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "Ready to call the world?",
+    "ctaAppStore": "Download on App Store",
+    "ctaGooglePlay": "Get it on Google Play"
+  },
+  "footer": {
+    "impressum": "Legal Notice",
+    "datenschutz": "Privacy Policy",
+    "agb": "Terms",
+    "kontakt": "Contact",
+    "support": "Support",
+    "copyright": "© 2025 Vox42. All rights reserved.",
+    "faq": "FAQ"
+  },
+  "cookie": {
+    "text": "We use cookies to improve your experience. By using this site you agree to our privacy policy.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "darkMode": {
+    "toggle": "Toggle dark mode"
+  }
+}

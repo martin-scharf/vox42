@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "howItWorks": "Hoe het werkt",
+    "languages": "Talen",
+    "pricing": "Prijzen",
+    "security": "Beveiliging",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "headline": "Bellen zonder taalbarrières",
+    "subheadline": "Vox42 vertaalt uw telefoongesprekken in realtime — u hoort alles in uw taal, uw gesprekspartner in de zijne.",
+    "ctaAppStore": "Download in de App Store",
+    "ctaGooglePlay": "Verkrijgbaar op Google Play"
+  },
+  "howItWorks": {
+    "title": "Zo simpel is het",
+    "steps": [
+      {
+        "title": "Open de app",
+        "desc": "Start Vox42 op uw smartphone en selecteer uw taal."
+      },
+      {
+        "title": "Bellen",
+        "desc": "Bel elk nummer ter wereld rechtstreeks vanuit de app."
+      },
+      {
+        "title": "Praten",
+        "desc": "Praat gewoon — Vox42 vertaalt live in beide richtingen."
+      },
+      {
+        "title": "Transcript lezen",
+        "desc": "Na het gesprek is er een verwijderbaar tekstverslag beschikbaar."
+      }
+    ]
+  },
+  "languages": {
+    "title": "12 talen, één app",
+    "subtitle": "Van Duits tot Chinees — Vox42 overbrugt de meest voorkomende taalbarrières ter wereld."
+  },
+  "useCases": {
+    "title": "Voor elke situatie",
+    "cases": [
+      {
+        "icon": "hotel",
+        "title": "Hotel boeken",
+        "desc": "Bel rechtstreeks het hotel in het buitenland en verduidelijk alle details zonder misverstanden."
+      },
+      {
+        "icon": "family",
+        "title": "Familie bellen",
+        "desc": "Blijf in contact met uw familie ongeacht welke taal zij spreken."
+      },
+      {
+        "icon": "business",
+        "title": "Zakenpartners",
+        "desc": "Voer professionele gesprekken met internationale partners op voet van gelijkheid."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Eenvoudig prepaid model",
+    "subtitle": "Geen abonnement, geen verrassingen. Opwaarderen en gaan.",
+    "packages": [
+      {
+        "amount": "5€",
+        "label": "Starter",
+        "desc": "Perfect om te proberen. Ongeveer 30 minuten vertaalde gesprekken."
+      },
+      {
+        "amount": "15€",
+        "label": "Standard",
+        "desc": "Ons populairste pakket. Circa 100 minuten voor dagelijks gebruik.",
+        "popular": true
+      },
+      {
+        "amount": "50€",
+        "label": "Power",
+        "desc": "Voor veelbellers en zakenreizigers. Meer dan 330 minuten."
+      }
+    ],
+    "note": "Tegoed verloopt nooit. Apple Pay, creditcard en Stripe geaccepteerd."
+  },
+  "privacy": {
+    "title": "Uw gegevens zijn van u",
+    "points": [
+      {
+        "title": "Geen audio opgeslagen",
+        "desc": "Audiogegevens worden uitsluitend verwerkt voor realtime vertaling en worden nooit opgeslagen."
+      },
+      {
+        "title": "Verwijderbaar transcript",
+        "desc": "U kunt het tekstverslag van uw gesprek op elk moment in de app verwijderen."
+      },
+      {
+        "title": "EU-servers",
+        "desc": "Alle gegevens worden uitsluitend verwerkt op servers in de Europese Unie."
+      }
+    ],
+    "link": "Privacybeleid lezen"
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "items": [
+      {
+        "q": "Hoe nauwkeurig is de vertaling?",
+        "a": "Vox42 maakt gebruik van geavanceerde AI-vertaling met meer dan 95% nauwkeurigheid voor ondersteunde talen."
+      },
+      {
+        "q": "Werkt het zonder Wi-Fi?",
+        "a": "Ja, met een stabiele mobiele dataverbinding (4G/LTE of beter) werkt de vertaling net zo goed als via Wi-Fi."
+      },
+      {
+        "q": "Hoe wordt mijn gesprek beschermd?",
+        "a": "De transmissie is end-to-end versleuteld. Audiogegevens worden niet permanent opgeslagen."
+      },
+      {
+        "q": "Kan ik Vox42 gebruiken in noodgevallen?",
+        "a": "Vox42 is ontworpen voor dagelijkse communicatie. Voor medische noodgevallen raden we altijd een professionele tolk aan."
+      },
+      {
+        "q": "Wat kost een gesprek per minuut?",
+        "a": "De kosten variëren per bestemming. Met het Starter-pakket (€5) heeft u circa 30 minuten, met Standard (€15) circa 100 minuten."
+      },
+      {
+        "q": "Verloopt mijn tegoed?",
+        "a": "Nee. Opgewaardeerd tegoed verloopt nooit en blijft geldig zolang uw account actief is."
+      },
+      {
+        "q": "Welke talen worden ondersteund?",
+        "a": "Vox42 ondersteunt momenteel Duits, Engels, Frans, Italiaans, Spaans, Portugees, Pools, Turks, Nederlands, Russisch, Oekraïens en Chinees."
+      },
+      {
+        "q": "Hoe waardeer ik tegoed op?",
+        "a": "U kunt tegoed direct in de app opwaarderen via Apple Pay, Google Pay, creditcard of Stripe."
+      }
+    ]
+  },
+  "finalCta": {
+    "headline": "Klaar om de wereld te bellen?",
+    "ctaAppStore": "Download in de App Store",
+    "ctaGooglePlay": "Verkrijgbaar op Google Play"
+  },
+  "footer": {
+    "impressum": "Juridische informatie",
+    "datenschutz": "Privacy",
+    "agb": "Voorwaarden",
+    "kontakt": "Contact",
+    "support": "Ondersteuning",
+    "copyright": "© 2025 Vox42. Alle rechten voorbehouden.",
+    "faq": "FAQ"
+  },
+  "cookie": {
+    "text": "We gebruiken cookies om uw ervaring te verbeteren. Door deze site te gebruiken gaat u akkoord met ons privacybeleid.",
+    "accept": "Accepteren",
+    "decline": "Weigeren"
+  },
+  "darkMode": {
+    "toggle": "Donkere modus wisselen"
+  }
+}
