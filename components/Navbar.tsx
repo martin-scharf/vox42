@@ -33,17 +33,17 @@ export default function Navbar() {
           <div className="relative">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" r="14" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" strokeWidth="1"/>
-              <path d="M10 12 L16 20 L22 12" stroke="#00D4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <circle cx="10" cy="12" r="2.5" fill="#00D4FF"/>
+              <path d="M10 12 L16 20 L22 12" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <circle cx="10" cy="12" r="2.5" fill="#F59E0B"/>
               <circle cx="22" cy="12" r="2.5" fill="#F59E0B"/>
-              <circle cx="16" cy="20" r="2.5" fill="#00D4FF" opacity="0.6"/>
+              <circle cx="16" cy="20" r="2.5" fill="#F59E0B" opacity="0.6"/>
             </svg>
           </div>
           <span
-            className="font-display font-bold text-xl tracking-tight text-white group-hover:text-cyan transition-colors duration-200"
+            className="font-display font-bold text-xl tracking-tight text-white group-hover:text-amber transition-colors duration-200"
             style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)', color: 'white' }}
           >
-            Vox<span style={{ color: '#00D4FF' }}>42</span>
+            Vox<span style={{ color: '#F59E0B' }}>42</span>
           </span>
         </a>
 
@@ -64,7 +64,7 @@ export default function Navbar() {
                 {label}
                 <span
                   className="absolute -bottom-0.5 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-                  style={{ background: '#00D4FF' }}
+                  style={{ background: '#F59E0B' }}
                 />
               </a>
             </li>
@@ -75,22 +75,29 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
 
+          {/* iOS App Store */}
+          <a
+            href="https://apps.apple.com/app/vox42/id6741490994"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-200"
+            style={{ background: 'rgba(255,255,255,0.08)', color: '#fff', border: '1px solid rgba(255,255,255,0.12)', minHeight: '38px', fontFamily: 'var(--font-syne, Syne, sans-serif)' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.14)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)'; }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            iOS App
+          </a>
+
           {/* CTA */}
           <a
             href="/de/app"
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200"
-            style={{
-              background: '#00D4FF',
-              color: '#050810',
-              fontFamily: 'var(--font-syne, Syne, sans-serif)',
-              minHeight: '38px',
-            }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 20px rgba(0,212,255,0.4)';
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.boxShadow = '';
-            }}
+            style={{ background: '#F59E0B', color: '#050810', fontFamily: 'var(--font-syne, Syne, sans-serif)', minHeight: '38px' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 0 20px rgba(245,158,11,0.4)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ''; }}
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
@@ -143,7 +150,7 @@ export default function Navbar() {
                   className="block py-3 px-2 rounded-lg text-sm font-medium transition-colors duration-150"
                   style={{ color: '#94A3B8' }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.color = '#00D4FF';
+                    (e.currentTarget as HTMLElement).style.color = '#F59E0B';
                     (e.currentTarget as HTMLElement).style.background = 'rgba(0,212,255,0.05)';
                   }}
                   onMouseLeave={e => {
@@ -159,7 +166,7 @@ export default function Navbar() {
           <a
             href="/de/app"
             className="mt-4 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold"
-            style={{ background: '#00D4FF', color: '#050810', fontFamily: 'var(--font-syne, Syne)' }}
+            style={{ background: '#F59E0B', color: '#050810', fontFamily: 'var(--font-syne, Syne)' }}
           >
             Jetzt starten
           </a>

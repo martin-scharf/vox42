@@ -69,7 +69,7 @@ export default function Hero() {
             <span className="section-label">
               <span
                 className="w-1.5 h-1.5 rounded-full animate-pulse2"
-                style={{ background: '#00D4FF', display: 'inline-block' }}
+                style={{ background: '#F59E0B', display: 'inline-block' }}
               />
               {t('badge1')}
             </span>
@@ -95,7 +95,7 @@ export default function Hero() {
             {t('headline').split('.').length > 1 && (
               <>
                 {' '}
-                <span className="text-glow-cyan" style={{ color: '#00D4FF' }}>
+                <span className="text-glow-cyan" style={{ color: '#F59E0B' }}>
                   {t('headline').split('.').slice(1).join('.').trim()}
                 </span>
               </>
@@ -126,6 +126,22 @@ export default function Hero() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
               </svg>
+            </a>
+
+            {/* iOS App Store */}
+            <a
+              href="https://apps.apple.com/app/vox42/id6741490994"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
+              style={{ background: 'rgba(255,255,255,0.07)', color: '#fff', border: '1px solid rgba(255,255,255,0.13)' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.13)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.07)'; }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+              App Store
             </a>
           </div>
 
@@ -420,7 +436,7 @@ export default function Hero() {
                 borderRadius: '12px',
                 fontSize: '11px',
                 fontWeight: '700',
-                color: '#00D4FF',
+                color: '#F59E0B',
                 fontFamily: 'var(--font-syne, Syne)',
                 animation: 'float 5s ease-in-out infinite',
                 animationDelay: '0.5s',
