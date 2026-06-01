@@ -37,7 +37,7 @@ export default function WorldMapD3({
       const pathGen = d3.geoPath().projection(proj);
 
       // Ocean
-      svg.append('rect').attr('width', W).attr('height', H).attr('fill', '#080d1a').attr('rx', 8);
+      svg.append('rect').attr('width', W).attr('height', H).attr('fill', '#1a2535').attr('rx', 8);
       svg.append('path').datum({ type: 'Sphere' } as unknown as GeoJSON.GeoJsonObject)
         .attr('d', pathGen as any).attr('fill', 'none')
         .attr('stroke', 'rgba(0,212,255,0.06)').attr('stroke-width', 1.2);

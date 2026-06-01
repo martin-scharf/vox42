@@ -12,10 +12,10 @@
    DESIGN TOKENS
 ───────────────────────────────────────── */
 :root {
-  --bg:           #050810;
-  --surface:      #0d1117;
-  --surface-2:    #131922;
-  --surface-3:    #1a2235;
+  --bg:           #1E293B;
+  --surface:      #253347;
+  --surface-2:    #2c3c52;
+  --surface-3:    #334560;
   --border:       rgba(255, 255, 255, 0.07);
   --border-hover: rgba(255, 255, 255, 0.14);
 

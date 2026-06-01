@@ -7,7 +7,7 @@ export default function FAQ() {
   const items = t.raw('items') as Array<{ q: string; a: string }>;
 
   return (
-    <section id="faq" className="py-24" style={{ background: '#050810' }}>
+    <section id="faq" className="py-24" style={{ background: '#1E293B' }}>
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>

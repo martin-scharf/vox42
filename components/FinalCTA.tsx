@@ -9,7 +9,7 @@ export default function FinalCTA() {
     <section
       className="py-24 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #080d1a 0%, #0d1829 100%)',
+        background: 'linear-gradient(135deg, #1a2535 0%, #0d1829 100%)',
         borderTop: '1px solid rgba(255,255,255,0.06)',
       }}
     >

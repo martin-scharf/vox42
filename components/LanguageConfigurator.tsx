@@ -265,7 +265,7 @@ export default function LanguageConfigurator() {
   };
 
   return (
-    <section id="configurator" style={{ padding: '80px 0', background: 'linear-gradient(180deg, #050810 0%, #080d1a 100%)', position: 'relative' }}>
+    <section id="configurator" style={{ padding: '80px 0', background: 'linear-gradient(180deg, #1E293B 0%, #1a2535 100%)', position: 'relative' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 20px' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '36px' }}>

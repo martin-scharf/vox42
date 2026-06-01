@@ -17,7 +17,7 @@ export default function Pricing() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="pricing" style={{ padding: '90px 0', background: '#050810', position: 'relative' }}>
+    <section id="pricing" style={{ padding: '90px 0', background: '#1E293B', position: 'relative' }}>
       {/* subtle glow */}
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'radial-gradient(ellipse 60% 30% at 50% 0%, rgba(0,212,255,0.04) 0%, transparent 70%)' }} />
 

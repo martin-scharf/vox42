@@ -13,7 +13,7 @@ export default function Privacy() {
   const points = t.raw('points') as Array<{ title: string; desc: string }>;
 
   return (
-    <section id="security" className="py-24" style={{ background: '#050810' }}>
+    <section id="security" className="py-24" style={{ background: '#1E293B' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>

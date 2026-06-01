@@ -44,7 +44,7 @@ export default function Languages() {
     <section
       id="languages"
       className="py-24 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #050810 0%, #080d1a 100%)' }}
+      style={{ background: 'linear-gradient(180deg, #1E293B 0%, #1a2535 100%)' }}
     >
       {/* background glow */}
       <div style={{

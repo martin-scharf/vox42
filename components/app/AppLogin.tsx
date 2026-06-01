@@ -55,7 +55,7 @@ export default function AppLogin() {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ background: 'linear-gradient(135deg, #050810 0%, #0a0f1e 50%, #050810 100%)' }}
+      style={{ background: 'linear-gradient(135deg, #1E293B 0%, #1E293B 50%, #1E293B 100%)' }}
     >
       {/* Ambient glow */}
       <div
@@ -153,7 +153,7 @@ export default function AppLogin() {
                 className="w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
                   background: loading ? 'rgba(0,212,255,0.3)' : 'linear-gradient(135deg, #00D4FF, #0099cc)',
-                  color: '#050810',
+                  color: '#1E293B',
                   boxShadow: loading ? 'none' : '0 0 24px rgba(0,212,255,0.3)',
                   fontFamily: 'var(--font-syne, Syne, sans-serif)',
                 }}
@@ -201,7 +201,7 @@ export default function AppLogin() {
                 className="w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 disabled:opacity-50"
                 style={{
                   background: 'linear-gradient(135deg, #00D4FF, #0099cc)',
-                  color: '#050810',
+                  color: '#1E293B',
                   boxShadow: '0 0 24px rgba(0,212,255,0.3)',
                   fontFamily: 'var(--font-syne, Syne, sans-serif)',
                 }}

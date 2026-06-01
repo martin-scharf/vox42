@@ -103,7 +103,7 @@ export default function Navbar() {
           <a
             href="/de/app"
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200"
-            style={{ background: '#EA580B', color: '#050810', fontFamily: 'var(--font-syne, Syne, sans-serif)', minHeight: '38px' }}
+            style={{ background: '#EA580B', color: '#1E293B', fontFamily: 'var(--font-syne, Syne, sans-serif)', minHeight: '38px' }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 0 20px rgba(245,158,11,0.4)'; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ''; }}
           >
@@ -174,7 +174,7 @@ export default function Navbar() {
           <a
             href="/de/app"
             className="mt-4 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold"
-            style={{ background: '#EA580B', color: '#050810', fontFamily: 'var(--font-syne, Syne)' }}
+            style={{ background: '#EA580B', color: '#1E293B', fontFamily: 'var(--font-syne, Syne)' }}
           >
             Jetzt starten
           </a>

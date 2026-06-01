@@ -85,7 +85,7 @@ export default function UseCases() {
   return (
     <section
       className="py-24 relative"
-      style={{ background: '#050810' }}
+      style={{ background: '#1E293B' }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}

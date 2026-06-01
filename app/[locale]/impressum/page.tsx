@@ -17,7 +17,7 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
   return (
     <>
       <Navbar />
-      <main style={{ background: '#050810', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px' }}>
+      <main style={{ background: '#1E293B', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto', padding: '0 24px' }}>
           <Link href={`/${locale}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', color: '#00D4FF', textDecoration: 'none', marginBottom: '32px' }}>
             ← Zurück

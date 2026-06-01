@@ -18,7 +18,7 @@ export default function Footer() {
   ] as const;
 
   return (
-    <footer className="py-12" style={{ background: '#050810', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+    <footer className="py-12" style={{ background: '#1E293B', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}

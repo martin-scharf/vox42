@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center pt-16 overflow-hidden grain-overlay"
-      style={{ background: '#050810' }}
+      style={{ background: '#1E293B' }}
     >
       {/* Animated Mesh Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>

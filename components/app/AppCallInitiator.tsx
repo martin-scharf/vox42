@@ -228,7 +228,7 @@ export default function AppCallInitiator({ onCallStarted }: Props) {
           className="w-full py-4 rounded-xl font-bold text-base transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
           style={{
             background: 'linear-gradient(135deg, #00D4FF 0%, #0099cc 100%)',
-            color: '#050810',
+            color: '#1E293B',
             boxShadow: loading ? 'none' : '0 0 32px rgba(0,212,255,0.35), 0 4px 16px rgba(0,0,0,0.4)',
             fontFamily: 'var(--font-syne, Syne, sans-serif)',
           }}
@@ -282,7 +282,7 @@ function LangSelect({ value, onChange, label }: { value: string; onChange: (v: s
           onBlur={(e) => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)')}
         >
           {LANGUAGES.map(l => (
-            <option key={l.code} value={l.code} style={{ background: '#0d1117' }}>
+            <option key={l.code} value={l.code} style={{ background: '#253347' }}>
               {l.flag} {l.label}
             </option>
           ))}
