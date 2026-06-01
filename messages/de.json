@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Bei Google Play",
     "badge1": "Kein Abo",
     "badge2": "Live-Transkription",
-    "ctaPrimary": "Jetzt kostenlos testen",
+    "ctaPrimary": "Jetzt starten",
     "ctaSecondary": "Wie es funktioniert"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "Bereit, die Welt anzurufen?",
     "ctaAppStore": "Im App Store laden",
-    "ctaGooglePlay": "Bei Google Play"
+    "ctaGooglePlay": "Bei Google Play",
+    "ctaWebApp": "Im Browser starten"
   },
   "footer": {
     "impressum": "Impressum",

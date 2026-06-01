@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Get it on Google Play",
     "badge1": "No subscription",
     "badge2": "Live transcription",
-    "ctaPrimary": "Try for free",
+    "ctaPrimary": "Start now",
     "ctaSecondary": "How it works"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "Ready to call the world?",
     "ctaAppStore": "Download on App Store",
-    "ctaGooglePlay": "Get it on Google Play"
+    "ctaGooglePlay": "Get it on Google Play",
+    "ctaWebApp": "Start in Browser"
   },
   "footer": {
     "impressum": "Legal Notice",

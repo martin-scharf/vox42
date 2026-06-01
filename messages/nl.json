@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Verkrijgbaar op Google Play",
     "badge1": "Geen abonnement",
     "badge2": "Live transcriptie",
-    "ctaPrimary": "Gratis proberen",
+    "ctaPrimary": "Nu starten",
     "ctaSecondary": "Hoe het werkt"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "Klaar om de wereld te bellen?",
     "ctaAppStore": "Download in de App Store",
-    "ctaGooglePlay": "Verkrijgbaar op Google Play"
+    "ctaGooglePlay": "Verkrijgbaar op Google Play",
+    "ctaWebApp": "Start in browser"
   },
   "footer": {
     "impressum": "Juridische informatie",

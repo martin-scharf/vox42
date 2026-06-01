@@ -13,7 +13,7 @@
     "ctaGooglePlay": "在 Google Play 获取",
     "badge1": "无需订阅",
     "badge2": "实时转录",
-    "ctaPrimary": "免费试用",
+    "ctaPrimary": "立即开始",
     "ctaSecondary": "了解工作原理"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "准备好拨打全球电话了吗？",
     "ctaAppStore": "在 App Store 下载",
-    "ctaGooglePlay": "在 Google Play 获取"
+    "ctaGooglePlay": "在 Google Play 获取",
+    "ctaWebApp": "在浏览器中启动"
   },
   "footer": {
     "impressum": "法律声明",

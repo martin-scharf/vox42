@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Google Play'den Al",
     "badge1": "Abonelik yok",
     "badge2": "Canlı transkripsiyon",
-    "ctaPrimary": "Ücretsiz dene",
+    "ctaPrimary": "Şimdi başla",
     "ctaSecondary": "Nasıl çalışır"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "Dünyayı aramaya hazır mısınız?",
     "ctaAppStore": "App Store'dan İndir",
-    "ctaGooglePlay": "Google Play'den Al"
+    "ctaGooglePlay": "Google Play'den Al",
+    "ctaWebApp": "Tarayıcıda başlat"
   },
   "footer": {
     "impressum": "Yasal Bildirim",

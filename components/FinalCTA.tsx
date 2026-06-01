@@ -43,16 +43,16 @@ export default function FinalCTA() {
             {t('ctaAppStore')}
           </a>
           <a
-            href="#"
+            href="/de/app"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold transition-all min-h-[44px]"
-            style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)')}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)')}
+            style={{ background: 'transparent', border: '1px solid rgba(0,212,255,0.4)', color: '#00D4FF' }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(0,212,255,0.8)')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(0,212,255,0.4)')}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M3.18 23.18c.37.2.78.3 1.19.3.29 0 .58-.05.86-.16L14 17.5l-2.84-2.84L3.18 23.18zM20.5 10.5l-3.18-1.84-3.17 3.34 3.17 3.17 3.19-1.86c.91-.53.91-2.28-.01-2.81zM4.37.68C4.06.58 3.71.55 3.37.65L11.16 8.5l3.16-3.16L4.37.68zM3.18.82L11.16 8.5l.84.84L3.37.65C3.28.68 3.22.74 3.18.82zM3.18.82c-.1.18-.18.4-.18.68v21c0 .29.08.51.18.68l.19.19L12.5 13.5v-.22L3.37.63l-.19.19z"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
             </svg>
-            {t('ctaGooglePlay')}
+            {t('ctaWebApp')}
           </a>
         </div>
       </div>

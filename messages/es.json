@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Disponible en Google Play",
     "badge1": "Sin suscripción",
     "badge2": "Transcripción en vivo",
-    "ctaPrimary": "Prueba gratis",
+    "ctaPrimary": "Empezar ahora",
     "ctaSecondary": "Cómo funciona"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "¿Listo para llamar al mundo?",
     "ctaAppStore": "Descargar en App Store",
-    "ctaGooglePlay": "Disponible en Google Play"
+    "ctaGooglePlay": "Disponible en Google Play",
+    "ctaWebApp": "Iniciar en el navegador"
   },
   "footer": {
     "impressum": "Aviso legal",

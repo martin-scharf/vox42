@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Disponibile su Google Play",
     "badge1": "Senza abbonamento",
     "badge2": "Trascrizione in tempo reale",
-    "ctaPrimary": "Prova gratis",
+    "ctaPrimary": "Inizia ora",
     "ctaSecondary": "Come funziona"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "Pronto a chiamare il mondo?",
     "ctaAppStore": "Scarica su App Store",
-    "ctaGooglePlay": "Disponibile su Google Play"
+    "ctaGooglePlay": "Disponibile su Google Play",
+    "ctaWebApp": "Avvia nel browser"
   },
   "footer": {
     "impressum": "Note legali",

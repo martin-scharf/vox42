@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Доступно в Google Play",
     "badge1": "Без підписки",
     "badge2": "Жива транскрипція",
-    "ctaPrimary": "Спробувати безкоштовно",
+    "ctaPrimary": "Почати зараз",
     "ctaSecondary": "Як це працює"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "Готові зателефонувати в будь-яку точку світу?",
     "ctaAppStore": "Завантажити в App Store",
-    "ctaGooglePlay": "Доступно в Google Play"
+    "ctaGooglePlay": "Доступно в Google Play",
+    "ctaWebApp": "Запустити у браузері"
   },
   "footer": {
     "impressum": "Правова інформація",

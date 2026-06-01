@@ -13,7 +13,7 @@
     "ctaGooglePlay": "Pobierz w Google Play",
     "badge1": "Bez subskrypcji",
     "badge2": "Transkrypcja na żywo",
-    "ctaPrimary": "Wypróbuj za darmo",
+    "ctaPrimary": "Zacznij teraz",
     "ctaSecondary": "Jak to działa"
   },
   "howItWorks": {
@@ -454,7 +454,8 @@
   "finalCta": {
     "headline": "Gotowy, żeby zadzwonić do świata?",
     "ctaAppStore": "Pobierz w App Store",
-    "ctaGooglePlay": "Pobierz w Google Play"
+    "ctaGooglePlay": "Pobierz w Google Play",
+    "ctaWebApp": "Uruchom w przeglądarce"
   },
   "footer": {
     "impressum": "Nota prawna",
