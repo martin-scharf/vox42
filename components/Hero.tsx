@@ -69,14 +69,14 @@ export default function Hero() {
             <span className="section-label">
               <span
                 className="w-1.5 h-1.5 rounded-full animate-pulse2"
-                style={{ background: '#F59E0B', display: 'inline-block' }}
+                style={{ background: '#EA580B', display: 'inline-block' }}
               />
               {t('badge1')}
             </span>
-            <span className="section-label" style={{ color: '#F59E0B', borderColor: 'rgba(245,158,11,0.3)', background: 'rgba(245,158,11,0.1)' }}>
+            <span className="section-label" style={{ color: '#EA580B', borderColor: 'rgba(245,158,11,0.3)', background: 'rgba(245,158,11,0.1)' }}>
               <span
                 className="w-1.5 h-1.5 rounded-full animate-pulse2"
-                style={{ background: '#F59E0B', display: 'inline-block', animationDelay: '0.5s' }}
+                style={{ background: '#EA580B', display: 'inline-block', animationDelay: '0.5s' }}
               />
               {t('badge2')}
             </span>
@@ -95,7 +95,7 @@ export default function Hero() {
             {t('headline').split('.').length > 1 && (
               <>
                 {' '}
-                <span className="text-glow-cyan" style={{ color: '#F59E0B' }}>
+                <span className="text-glow-cyan" style={{ color: '#EA580B' }}>
                   {t('headline').split('.').slice(1).join('.').trim()}
                 </span>
               </>
@@ -436,7 +436,7 @@ export default function Hero() {
                 borderRadius: '12px',
                 fontSize: '11px',
                 fontWeight: '700',
-                color: '#F59E0B',
+                color: '#EA580B',
                 fontFamily: 'var(--font-syne, Syne)',
                 animation: 'float 5s ease-in-out infinite',
                 animationDelay: '0.5s',
@@ -454,7 +454,7 @@ export default function Hero() {
                 borderRadius: '12px',
                 fontSize: '11px',
                 fontWeight: '700',
-                color: '#F59E0B',
+                color: '#EA580B',
                 fontFamily: 'var(--font-syne, Syne)',
                 animation: 'float 6s ease-in-out infinite',
                 animationDelay: '1.2s',

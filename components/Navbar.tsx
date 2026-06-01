@@ -31,19 +31,27 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 shrink-0 group">
           <div className="relative">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="14" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" strokeWidth="1"/>
-              <path d="M10 12 L16 20 L22 12" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-              <circle cx="10" cy="12" r="2.5" fill="#F59E0B"/>
-              <circle cx="22" cy="12" r="2.5" fill="#F59E0B"/>
-              <circle cx="16" cy="20" r="2.5" fill="#F59E0B" opacity="0.6"/>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#EA580B"/>
+              {/* Left speech bubble */}
+              <rect x="5" y="8" width="14" height="10" rx="2.5" fill="white" opacity="0.95"/>
+              <polygon points="8,18 12,18 10,22" fill="white" opacity="0.95"/>
+              {/* Lines in left bubble */}
+              <line x1="8" y1="11.5" x2="16" y2="11.5" stroke="#EA580B" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+              <line x1="8" y1="14" x2="15" y2="14" stroke="#EA580B" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+              {/* Right speech bubble */}
+              <rect x="17" y="14" width="14" height="10" rx="2.5" fill="white" opacity="0.75"/>
+              <polygon points="24,24 28,24 26,28" fill="white" opacity="0.75"/>
+              {/* Lines in right bubble */}
+              <line x1="20" y1="17.5" x2="28" y2="17.5" stroke="#EA580B" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+              <line x1="20" y1="20" x2="27" y2="20" stroke="#EA580B" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
             </svg>
           </div>
           <span
             className="font-display font-bold text-xl tracking-tight text-white group-hover:text-amber transition-colors duration-200"
             style={{ fontFamily: 'var(--font-syne, Syne, sans-serif)', color: 'white' }}
           >
-            Vox<span style={{ color: '#F59E0B' }}>42</span>
+            Vox<span style={{ color: '#EA580B' }}>42</span>
           </span>
         </a>
 
@@ -64,7 +72,7 @@ export default function Navbar() {
                 {label}
                 <span
                   className="absolute -bottom-0.5 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-                  style={{ background: '#F59E0B' }}
+                  style={{ background: '#EA580B' }}
                 />
               </a>
             </li>
@@ -95,7 +103,7 @@ export default function Navbar() {
           <a
             href="/de/app"
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200"
-            style={{ background: '#F59E0B', color: '#050810', fontFamily: 'var(--font-syne, Syne, sans-serif)', minHeight: '38px' }}
+            style={{ background: '#EA580B', color: '#050810', fontFamily: 'var(--font-syne, Syne, sans-serif)', minHeight: '38px' }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 0 20px rgba(245,158,11,0.4)'; }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ''; }}
           >
@@ -150,7 +158,7 @@ export default function Navbar() {
                   className="block py-3 px-2 rounded-lg text-sm font-medium transition-colors duration-150"
                   style={{ color: '#94A3B8' }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.color = '#F59E0B';
+                    (e.currentTarget as HTMLElement).style.color = '#EA580B';
                     (e.currentTarget as HTMLElement).style.background = 'rgba(0,212,255,0.05)';
                   }}
                   onMouseLeave={e => {
@@ -166,7 +174,7 @@ export default function Navbar() {
           <a
             href="/de/app"
             className="mt-4 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold"
-            style={{ background: '#F59E0B', color: '#050810', fontFamily: 'var(--font-syne, Syne)' }}
+            style={{ background: '#EA580B', color: '#050810', fontFamily: 'var(--font-syne, Syne)' }}
           >
             Jetzt starten
           </a>

@@ -141,7 +141,7 @@ export default function AppCallInitiator({ onCallStarted }: Props) {
           <a
             href="#topup"
             className="px-4 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200"
-            style={{ background: 'rgba(245,158,11,0.15)', color: '#F59E0B', border: '1px solid rgba(245,158,11,0.3)' }}
+            style={{ background: 'rgba(245,158,11,0.15)', color: '#EA580B', border: '1px solid rgba(245,158,11,0.3)' }}
             onMouseOver={(e) => (e.currentTarget.style.background = 'rgba(245,158,11,0.25)')}
             onMouseOut={(e) => (e.currentTarget.style.background = 'rgba(245,158,11,0.15)')}
           >

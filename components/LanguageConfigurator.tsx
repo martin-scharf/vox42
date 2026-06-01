@@ -189,7 +189,7 @@ const ZONE_C = ['US','CA','AU','NZ','JP','KR','SG','HK','TW','IN','ID','VN','PH'
 function getZone(cc: string) {
   if (ZONE_A.includes(cc)) return { l: 'Zone A', r: '0,08 €/Min', c: '#00D4FF' };
   if (ZONE_B.includes(cc)) return { l: 'Zone B', r: '0,12 €/Min', c: '#4ADE80' };
-  if (ZONE_C.includes(cc)) return { l: 'Zone C', r: '0,18 €/Min', c: '#F59E0B' };
+  if (ZONE_C.includes(cc)) return { l: 'Zone C', r: '0,18 €/Min', c: '#EA580B' };
   return { l: 'Zone D', r: '0,28 €/Min', c: '#F97316' };
 }
 
@@ -308,9 +308,9 @@ export default function LanguageConfigurator() {
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 padding: '10px 22px', borderRadius: '30px', cursor: 'pointer',
                 fontSize: '0.85rem', fontWeight: 600,
-                border: showOverlay ? '1px solid #F59E0B' : '1px solid rgba(245,158,11,0.35)',
+                border: showOverlay ? '1px solid #EA580B' : '1px solid rgba(245,158,11,0.35)',
                 background: showOverlay ? 'rgba(245,158,11,0.15)' : 'rgba(245,158,11,0.06)',
-                color: showOverlay ? '#F59E0B' : '#92400E',
+                color: showOverlay ? '#EA580B' : '#92400E',
                 boxShadow: showOverlay ? '0 0 20px rgba(245,158,11,0.25)' : 'none',
                 transition: 'all 0.25s',
               }}
@@ -352,10 +352,10 @@ export default function LanguageConfigurator() {
               pointerEvents: 'none',
             }}>
               <div>
-                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#F59E0B', textAlign: 'right' }}>{t('targetMap')}</h3>
+                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: '0.93rem', fontWeight: 700, color: '#EA580B', textAlign: 'right' }}>{t('targetMap')}</h3>
                 <p style={{ fontSize: '0.7rem', color: '#92400E', marginTop: '1px', textAlign: 'right' }}>{t('targetMapSub')}</p>
               </div>
-              <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#F59E0B', boxShadow: '0 0 8px #F59E0B', flexShrink: 0 }} />
+              <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#EA580B', boxShadow: '0 0 8px #EA580B', flexShrink: 0 }} />
             </div>
           </div>
 

@@ -74,7 +74,7 @@ export default function AppLogin() {
               <circle cx="16" cy="16" r="14" fill="rgba(0,212,255,0.1)" stroke="rgba(0,212,255,0.3)" strokeWidth="1"/>
               <path d="M10 12 L16 20 L22 12" stroke="#00D4FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
               <circle cx="10" cy="12" r="2.5" fill="#00D4FF"/>
-              <circle cx="22" cy="12" r="2.5" fill="#F59E0B"/>
+              <circle cx="22" cy="12" r="2.5" fill="#EA580B"/>
               <circle cx="16" cy="20" r="2.5" fill="#00D4FF" opacity="0.6"/>
             </svg>
             <span

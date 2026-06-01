@@ -79,7 +79,7 @@ export default function WorldMapD3({
           const cc = ISO[+d.id];
           if (!cc) return 'rgba(255,255,255,0.1)';
           if (mapType === 'source' && activeCountries.has(cc)) return '#00D4FF';
-          if (mapType === 'target' && allTargetCodes.includes(cc)) return '#F59E0B';
+          if (mapType === 'target' && allTargetCodes.includes(cc)) return '#EA580B';
           return 'rgba(255,255,255,0.1)';
         })
         .attr('stroke-width', (d: any) => {

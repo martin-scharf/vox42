@@ -72,7 +72,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 const COLORS = [
   { bg: 'rgba(0,212,255,0.08)',   border: 'rgba(0,212,255,0.2)',   text: '#00D4FF',  hover: 'rgba(0,212,255,0.04)' },
   { bg: 'rgba(139,92,246,0.08)',  border: 'rgba(139,92,246,0.2)',  text: '#8B5CF6',  hover: 'rgba(139,92,246,0.04)' },
-  { bg: 'rgba(245,158,11,0.08)',  border: 'rgba(245,158,11,0.2)',  text: '#F59E0B',  hover: 'rgba(245,158,11,0.04)' },
+  { bg: 'rgba(245,158,11,0.08)',  border: 'rgba(245,158,11,0.2)',  text: '#EA580B',  hover: 'rgba(245,158,11,0.04)' },
   { bg: 'rgba(34,197,94,0.08)',   border: 'rgba(34,197,94,0.2)',   text: '#22C55E',  hover: 'rgba(34,197,94,0.04)' },
   { bg: 'rgba(239,68,68,0.08)',   border: 'rgba(239,68,68,0.2)',   text: '#EF4444',  hover: 'rgba(239,68,68,0.04)' },
   { bg: 'rgba(59,130,246,0.08)',  border: 'rgba(59,130,246,0.2)',  text: '#3B82F6',  hover: 'rgba(59,130,246,0.04)' },
